@@ -82,7 +82,7 @@
   </div>
 </header>
 
-<div class="nav-overlay" id="nav-overlay" data-open="false">
+<div class="nav-overlay" id="nav-overlay" data-open="false" role="dialog" aria-modal="true" aria-label="Site navigation" aria-hidden="true">
   <div class="overlay-header">
     <a href="/" class="brand">Plenor Group</a>
     <button class="nav-toggle" aria-label="Close menu" data-close="true">Close</button>
@@ -111,7 +111,10 @@
     <div class="eyebrow">Book a 15-minute intro</div>
     <h2>Pick a slot below.</h2>
     <p class="lead">We respond within two business days for any custom timing requests.</p>
-    <div id="cal-embed" aria-label="Cal.com booking calendar"></div>
+    <div id="cal-embed" aria-label="Cal.com booking calendar">
+      <button type="button" id="load-cal" class="btn btn-primary">Load calendar</button>
+      <p class="cal-fallback-note">Or visit <a href="https://cal.com/everton-paula-brdv6v/15min" target="_blank" rel="noopener">cal.com/everton-paula-brdv6v/15min</a> directly.</p>
+    </div>
     <p style="margin-block-start: 1.25rem; color: var(--text-soft); font-size: 0.95rem;">If the calendar does not load, write to <a href="mailto:contact@plenorgroup.com">contact@plenorgroup.com</a> or book directly at <a href="https://cal.com/everton-paula-brdv6v/15min" target="_blank" rel="noopener">cal.com/everton-paula-brdv6v/15min</a>.</p>
   </div>
 </section>
@@ -199,16 +202,20 @@
 
 <script src="/nav.js" defer></script>
 
-<!-- Cal.com inline embed -->
 <script type="text/javascript">
-  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-  Cal("init", "15min", {origin:"https://cal.com"});
-  Cal.ns["15min"]("inline", {
-    elementOrSelector:"#cal-embed",
-    config: {"layout":"month_view"},
-    calLink: "everton-paula-brdv6v/15min",
+  document.getElementById('load-cal').addEventListener('click', function () {
+    this.remove();
+    var note = document.querySelector('.cal-fallback-note');
+    if (note) note.remove();
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", "15min", {origin:"https://cal.com"});
+    Cal.ns["15min"]("inline", {
+      elementOrSelector:"#cal-embed",
+      config: {"layout":"month_view"},
+      calLink: "everton-paula-brdv6v/15min",
+    });
+    Cal.ns["15min"]("ui", {"theme":"light","cssVarsPerTheme":{"light":{"cal-brand":"#1e3a8a"}},"hideEventTypeDetails":false,"layout":"month_view"});
   });
-  Cal.ns["15min"]("ui", {"theme":"light","cssVarsPerTheme":{"light":{"cal-brand":"#1e3a8a"}},"hideEventTypeDetails":false,"layout":"month_view"});
 </script>
 
 </body>
