@@ -177,15 +177,15 @@ p {
   letter-spacing: -0.02em;
 }
 .brand img {
-  height: 36px;
+  height: 52px;
   width: auto;
   display: block;
 }
 .brand:hover { color: var(--text); }
-.site-footer .brand img { height: 40px; }
+.site-footer .brand img { height: 56px; }
 @media (max-width: 768px) {
-  .brand img { height: 30px; }
-  .site-footer .brand img { height: 34px; }
+  .brand img { height: 42px; }
+  .site-footer .brand img { height: 48px; }
 }
 
 
@@ -707,7 +707,7 @@ article#case-2 {
   .site-header {
     padding-block: 1.5rem;
   }
-  .nav-links a:not(.btn-primary) {
+  .nav-links {
     display: none;
   }
   .nav-toggle {
