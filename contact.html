@@ -21,27 +21,11 @@
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231e3a8a'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='62' font-weight='600' fill='%23fafaf6' text-anchor='middle'%3EP%3C/text%3E%3C/svg%3E">
 
-<!-- TODO: self-host fonts for performance (per SEO Specialist recommendation). -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="/styles.css">
-
-<style>
-  .mobile-book-fab { display: none; }
-  /* No FAB on /contact — the page IS the booking page. */
-  .nav-links a.active { color: var(--text); font-weight: 600; }
-
-  /* Cal.com embed container — give it room and a calm background */
-  #cal-embed {
-    min-height: 640px;
-    background: var(--bg-elev);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 0.5rem;
-  }
-</style>
 
 <script type="application/ld+json">
 {
@@ -92,25 +76,25 @@
       <a href="/engagements">Engagements</a>
       <a href="/work">Work</a>
       <a href="/about">About</a>
-      <a href="/contact" class="btn btn-primary active">Book a call</a>
+      <a href="/contact" class="btn btn-primary" aria-current="page">Book a 15-min intro</a>
     </nav>
     <button class="nav-toggle" aria-label="Open menu" aria-controls="nav-overlay" aria-expanded="false">Menu</button>
   </div>
 </header>
 
 <div class="nav-overlay" id="nav-overlay" data-open="false">
-  <header>
+  <div class="overlay-header">
     <a href="/" class="brand">Plenor Group</a>
     <button class="nav-toggle" aria-label="Close menu" data-close="true">Close</button>
-  </header>
+  </div>
   <nav class="nav-stack" aria-label="Mobile">
     <a href="/method">The Bridge</a>
     <a href="/engagements">Engagements</a>
     <a href="/work">Work</a>
     <a href="/about">About</a>
-    <a href="/contact">Contact</a>
+    <a href="/contact" aria-current="page">Contact</a>
   </nav>
-  <a href="/contact" class="btn btn-primary nav-cta">Book a call</a>
+  <a href="/contact" class="btn btn-primary nav-cta">Book a 15-min intro</a>
 </div>
 
 <main id="main">
@@ -155,7 +139,7 @@
     <div class="unmeasured">
       <ol style="display: grid; gap: 1.25rem; max-width: 42rem; padding-inline-start: 1.25rem;">
         <li><strong>15-minute intro.</strong> A direct read on whether Plenor is the right fit for the problem. Honest if the answer is no.</li>
-        <li><strong>60-minute discovery.</strong> If the fit holds, a deeper conversation with the operating leader who will own the engagement. Scoped questions, no slide deck.</li>
+        <li><strong>60-minute scoping.</strong> If the fit holds, a deeper conversation with the operating leader who will own the engagement. Scoped questions, no slide deck.</li>
         <li><strong>Written proposal in 7 days.</strong> Scope, phases, deliverables, timeline, pricing structure. One document. Yes-or-no decision on the client side.</li>
       </ol>
     </div>
@@ -213,32 +197,7 @@
   </div>
 </footer>
 
-<script>
-  (function () {
-    var toggleBtn = document.querySelector('.site-header .nav-toggle');
-    var overlay = document.getElementById('nav-overlay');
-    var closeBtn = overlay ? overlay.querySelector('[data-close]') : null;
-    if (!toggleBtn || !overlay) return;
-    function open() {
-      overlay.setAttribute('data-open', 'true');
-      toggleBtn.setAttribute('aria-expanded', 'true');
-      document.body.style.overflow = 'hidden';
-    }
-    function close() {
-      overlay.setAttribute('data-open', 'false');
-      toggleBtn.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
-    }
-    toggleBtn.addEventListener('click', open);
-    if (closeBtn) closeBtn.addEventListener('click', close);
-    overlay.querySelectorAll('a').forEach(function (a) {
-      a.addEventListener('click', close);
-    });
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && overlay.getAttribute('data-open') === 'true') close();
-    });
-  })();
-</script>
+<script src="/nav.js" defer></script>
 
 <!-- Cal.com inline embed -->
 <script type="text/javascript">
