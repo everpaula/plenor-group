@@ -3,431 +3,218 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Plenor Group · Operating discipline that scales</title>
-<meta name="description" content="Fractional operations leadership for growth-stage marketplaces, fintech, and last-mile platforms. Built on operator math.">
+<title>Plenor Group · Operations after the strategy deck lands</title>
+<meta name="description" content="Fractional COO and operations leadership for growth-stage marketplaces, fintech, and last-mile. We turn the deck into a running operation.">
+<link rel="canonical" href="https://plenorgroup.com/">
 
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://plenorgroup.com">
-<meta property="og:title" content="Plenor Group · Operating discipline that scales">
-<meta property="og:description" content="Fractional operations leadership for growth-stage marketplaces, fintech, and last-mile platforms. Built on operator math.">
+<meta property="og:url" content="https://plenorgroup.com/">
+<meta property="og:title" content="Plenor Group · Operations after the strategy deck lands">
+<meta property="og:description" content="Fractional COO and operations leadership for growth-stage marketplaces, fintech, and last-mile. We turn the deck into a running operation.">
 <meta property="og:image" content="https://plenorgroup.com/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Plenor Group · Operating discipline that scales">
-<meta name="twitter:description" content="Fractional operations leadership for growth-stage marketplaces, fintech, and last-mile platforms.">
+<meta name="twitter:title" content="Plenor Group · Operations after the strategy deck lands">
+<meta name="twitter:description" content="Fractional COO and operations leadership for growth-stage marketplaces, fintech, and last-mile.">
 <meta name="twitter:image" content="https://plenorgroup.com/og-image.jpg">
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231e3a8a'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='62' font-weight='600' fill='%23fafaf6' text-anchor='middle'%3EP%3C/text%3E%3C/svg%3E">
 
+<!-- TODO: self-host fonts for performance (per SEO Specialist recommendation). Currently using Google Fonts CDN as fallback until /fonts/ folder is populated. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
 
+<link rel="stylesheet" href="/styles.css">
+
 <style>
-  :root {
-    --bg: #fafaf6;
-    --bg-elev: #f4f3ed;
-    --text: #1a1a1a;
-    --text-muted: #4a4a4a;
-    --text-soft: #7a7a7a;
-    --accent: #1e3a8a;
-    --accent-hover: #16306b;
-    --accent-soft: #e8edf8;
-    --border: #e5e3dc;
-    --serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
-    --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  }
-
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body {
-    font-family: var(--sans);
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.6;
-    font-size: 17px;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  .container { max-width: 1120px; margin: 0 auto; padding: 0 2rem; }
-
-  /* Header */
-  header {
-    padding: 1.5rem 0;
-    border-bottom: 1px solid var(--border);
-    position: sticky;
-    top: 0;
-    background: rgba(250, 250, 246, 0.94);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    z-index: 50;
-  }
-  header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .brand {
-    font-family: var(--serif);
-    font-size: 1.4rem;
-    font-weight: 600;
-    letter-spacing: -0.015em;
-    color: var(--text);
-    text-decoration: none;
-  }
-  .nav-links { display: flex; gap: 2.2rem; align-items: center; }
-  .nav-links a {
-    color: var(--text-muted);
-    text-decoration: none;
-    font-size: 0.95rem;
-    font-weight: 500;
-    transition: color 0.15s ease;
-  }
-  .nav-links a:hover { color: var(--accent); }
-  .nav-links .btn { padding: 0.5rem 1rem; font-size: 0.92rem; }
-
-  /* Hero */
-  .hero {
-    padding: 7rem 0 6rem;
-    border-bottom: 1px solid var(--border);
-  }
-  .hero h1 {
-    font-family: var(--serif);
-    font-size: clamp(2.4rem, 5.5vw, 4.2rem);
-    line-height: 1.05;
-    font-weight: 600;
-    color: var(--text);
-    margin-bottom: 1.75rem;
-    letter-spacing: -0.022em;
-    max-width: 16ch;
-  }
-  .hero .subhead {
-    font-size: 1.22rem;
-    color: var(--text-muted);
-    max-width: 38rem;
-    margin-bottom: 2.75rem;
-    line-height: 1.5;
-  }
-  .cta-row { display: flex; gap: 0.85rem; flex-wrap: wrap; }
-  .btn {
-    display: inline-block;
-    padding: 0.9rem 1.5rem;
-    font-size: 0.96rem;
-    font-weight: 600;
-    text-decoration: none;
-    border-radius: 6px;
-    transition: all 0.18s ease;
-    font-family: var(--sans);
-    border: 1px solid transparent;
-    cursor: pointer;
-  }
-  .btn-primary {
-    background: var(--accent);
-    color: #fff;
-  }
-  .btn-primary:hover { background: var(--accent-hover); transform: translateY(-1px); }
-  .btn-secondary {
-    background: transparent;
-    color: var(--text);
-    border: 1px solid var(--border);
-  }
-  .btn-secondary:hover { border-color: var(--text); }
-
-  /* Sections */
-  section {
-    padding: 5.5rem 0;
-    border-bottom: 1px solid var(--border);
-  }
-  .eyebrow {
-    font-size: 0.76rem;
-    font-weight: 700;
-    color: var(--accent);
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    margin-bottom: 0.9rem;
-  }
-  h2 {
-    font-family: var(--serif);
-    font-size: clamp(1.9rem, 3.2vw, 2.6rem);
-    font-weight: 600;
-    line-height: 1.18;
-    color: var(--text);
-    margin-bottom: 2.25rem;
-    letter-spacing: -0.012em;
-    max-width: 26ch;
-  }
-
-  /* What we do */
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 3rem;
-    margin-top: 1rem;
-  }
-  .service h3 {
-    font-family: var(--serif);
-    font-size: 1.3rem;
-    font-weight: 600;
-    margin-bottom: 0.8rem;
-    color: var(--text);
-    letter-spacing: -0.005em;
-  }
-  .service p {
-    color: var(--text-muted);
-    font-size: 1rem;
-    line-height: 1.6;
-  }
-
-  /* Stats */
-  .stats-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 1.25rem;
-    margin-top: 1rem;
-  }
-  .stat {
-    border: 1px solid var(--border);
-    padding: 2rem 1.6rem;
-    background: var(--bg-elev);
-    border-radius: 10px;
-    transition: border-color 0.15s ease;
-  }
-  .stat:hover { border-color: var(--accent); }
-  .stat-num {
-    font-family: var(--serif);
-    font-size: 2.6rem;
-    font-weight: 600;
-    color: var(--accent);
-    line-height: 1;
-    margin-bottom: 0.5rem;
-    letter-spacing: -0.015em;
-  }
-  .stat-label {
-    font-size: 0.93rem;
-    color: var(--text-muted);
-    line-height: 1.4;
-  }
-
-  /* Tools */
-  #tools .intro {
-    color: var(--text-muted);
-    max-width: 40rem;
-    margin-bottom: 2.25rem;
-    font-size: 1.05rem;
-  }
-  .tools-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.25rem;
-    margin: 0 0 2rem;
-  }
-  .tool-card {
-    border: 1px solid var(--border);
-    padding: 1.75rem 1.5rem;
-    border-radius: 10px;
-    background: var(--bg-elev);
-    transition: all 0.18s ease;
-    text-decoration: none;
-    color: inherit;
-    display: block;
-  }
-  .tool-card:hover {
-    border-color: var(--accent);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(30, 58, 138, 0.08);
-  }
-  .tool-card h3 {
-    font-family: var(--serif);
-    font-size: 1.15rem;
-    font-weight: 600;
-    margin-bottom: 0.55rem;
-    color: var(--text);
-  }
-  .tool-card p {
-    color: var(--text-muted);
-    font-size: 0.93rem;
-    line-height: 1.55;
-  }
-  .tool-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    color: var(--accent);
-    font-weight: 600;
-    text-decoration: none;
-    font-size: 0.98rem;
-  }
-  .tool-link::after {
-    content: '→';
-    transition: transform 0.15s ease;
-  }
-  .tool-link:hover::after { transform: translateX(3px); }
-
-  /* About */
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: start;
-  }
-  .about-content p {
-    color: var(--text-muted);
-    margin-bottom: 1.15rem;
-    font-size: 1.05rem;
-    line-height: 1.65;
-  }
-  .about-content p strong { color: var(--text); font-weight: 600; }
-  .about-pull {
-    background: var(--bg-elev);
-    border-left: 3px solid var(--accent);
-    padding: 1.75rem 1.75rem;
-    font-family: var(--serif);
-    font-size: 1.25rem;
-    line-height: 1.4;
-    color: var(--text);
-    font-style: italic;
-    letter-spacing: -0.005em;
-  }
-  .about-pull .attribution {
-    font-family: var(--sans);
-    font-style: normal;
-    font-size: 0.85rem;
-    color: var(--text-soft);
-    margin-top: 1rem;
-    letter-spacing: 0.02em;
-  }
+  /* Mobile floating Book button — visible on small screens only.
+     Lives here because styles.css does not yet define .mobile-book-fab. */
+  .mobile-book-fab { display: none; }
   @media (max-width: 768px) {
-    .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .mobile-book-fab {
+      display: inline-block;
+      position: fixed;
+      right: 1rem;
+      bottom: 1rem;
+      z-index: 60;
+      padding: 0.75rem 1.1rem;
+      background: var(--accent);
+      color: #fff;
+      font-family: var(--sans);
+      font-size: 0.92rem;
+      font-weight: 600;
+      border-radius: 999px;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(14, 17, 22, 0.18);
+    }
   }
-
-  /* CTA banner */
-  .cta-banner {
-    background: var(--accent);
-    color: #fff;
-    padding: 4rem 0;
-    border-bottom: none;
-  }
-  .cta-banner h2 {
-    color: #fff;
-    margin-bottom: 1rem;
-    max-width: 22ch;
-  }
-  .cta-banner p {
-    color: rgba(255,255,255,0.85);
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
-    max-width: 36rem;
-  }
-  .cta-banner .btn-primary {
-    background: #fff;
-    color: var(--accent);
-  }
-  .cta-banner .btn-primary:hover { background: var(--bg); }
-  .cta-banner .btn-secondary {
-    color: #fff;
-    border-color: rgba(255,255,255,0.4);
-  }
-  .cta-banner .btn-secondary:hover { border-color: #fff; }
-
-  /* Footer */
-  footer {
-    padding: 4rem 0 2rem;
-    background: var(--bg);
-  }
-  .footer-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 3rem;
-    margin-bottom: 3rem;
-  }
-  .footer-col h4 {
-    font-size: 0.82rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-bottom: 1rem;
-    color: var(--text-soft);
-    font-weight: 700;
-  }
-  .footer-col a {
-    display: block;
-    color: var(--text);
-    text-decoration: none;
-    margin-bottom: 0.55rem;
-    font-size: 0.98rem;
-    transition: color 0.15s ease;
-  }
-  .footer-col a:hover { color: var(--accent); }
-  .footer-bottom {
-    border-top: 1px solid var(--border);
-    padding-top: 1.5rem;
-    color: var(--text-soft);
-    font-size: 0.88rem;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-  .footer-tagline {
-    color: var(--text-muted);
-    font-size: 0.95rem;
-    max-width: 26rem;
-    margin-top: 1rem;
-  }
-
-  @media (max-width: 768px) {
-    .container { padding: 0 1.25rem; }
-    .nav-links a:not(.btn) { display: none; }
-    .hero { padding: 4.5rem 0 4rem; }
-    section { padding: 3.5rem 0; }
-    .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
-    .cta-banner { padding: 3rem 0; }
-  }
+  /* Active nav state — inherits link color rules from styles.css, just emphasizes it */
+  .nav-links a.active { color: var(--text); font-weight: 600; }
 </style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://plenorgroup.com/#org",
+      "name": "Plenor Group",
+      "legalName": "Plenor Group LLC",
+      "url": "https://plenorgroup.com/",
+      "logo": "https://plenorgroup.com/og-image.jpg",
+      "foundingDate": "2026-05-30",
+      "founder": { "@id": "https://plenorgroup.com/about#everton" },
+      "email": "contact@plenorgroup.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Tampa",
+        "addressRegion": "FL",
+        "addressCountry": "US"
+      },
+      "sameAs": [
+        "https://linkedin.com/in/evertonpaula",
+        "https://github.com/everpaula"
+      ]
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://plenorgroup.com/#service",
+      "name": "Plenor Group operations consulting",
+      "provider": { "@id": "https://plenorgroup.com/#org" },
+      "areaServed": "United States",
+      "serviceType": "Operations consulting, fractional operating leadership, operating diligence",
+      "description": "Boutique operations consulting that turns board-approved strategy into a running operation. Three engagement modes: post-strategy operationalization, fractional operating leadership, operating diligence."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://plenorgroup.com/#website",
+      "url": "https://plenorgroup.com/",
+      "name": "Plenor Group",
+      "publisher": { "@id": "https://plenorgroup.com/#org" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://plenorgroup.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the Bridge Method?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Bridge Method is a four-phase operating engagement that takes a board-approved strategy from slide deck to running system in 90 to 180 days. Phases run in sequence: Diagnose, Design, Stand up, Hand off. One accountable operator runs the work and the output is a functioning operating engine with named internal owners."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is Plenor different from MBB strategy firms?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "MBB firms produce strategy decks at high quality and disband at presentation. Plenor sits in the gap after the deck and before the in-house team is mature. One accountable operator owns the engagement. The deliverable is a running operating engine with named internal owners, not a final readout deck."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who is Plenor for?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Series A to Series C operators with a recently approved strategy and a six to nine month operating ramp. Founders running multiple workstreams personally that should belong to operating leads. Boards bridging a known operating gap during a transition. PE sponsors during diligence or in the first 100 days post-close."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does pricing look like?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Three pricing structures by engagement mode. Post-strategy operationalization is fixed-scope, 90 to 180 days, milestone-billed at phase gates. Fractional operating leadership is monthly retainer, 2 to 3 days per week, 6 to 12 month commitments. Operating diligence is day-rate or fixed-fee, 2 to 6 week engagements."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
-<header>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site-header">
   <div class="container">
     <a href="/" class="brand">Plenor Group</a>
-    <nav class="nav-links">
-      <a href="#services">Services</a>
-      <a href="#proof">Proof</a>
-      <a href="#tools">Tools</a>
-      <a href="#contact" class="btn btn-primary">Get in touch</a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="/method">The Bridge</a>
+      <a href="/engagements">Engagements</a>
+      <a href="/work">Work</a>
+      <a href="/about">About</a>
+      <a href="/contact" class="btn btn-primary">Book a call</a>
     </nav>
+    <button class="nav-toggle" aria-label="Open menu" aria-controls="nav-overlay" aria-expanded="false">Menu</button>
   </div>
 </header>
 
+<div class="nav-overlay" id="nav-overlay" data-open="false">
+  <header>
+    <a href="/" class="brand">Plenor Group</a>
+    <button class="nav-toggle" aria-label="Close menu" data-close="true">Close</button>
+  </header>
+  <nav class="nav-stack" aria-label="Mobile">
+    <a href="/method">The Bridge</a>
+    <a href="/engagements">Engagements</a>
+    <a href="/work">Work</a>
+    <a href="/about">About</a>
+    <a href="/contact">Contact</a>
+  </nav>
+  <a href="/contact" class="btn btn-primary nav-cta">Book a call</a>
+</div>
+
+<main id="main">
+
 <section class="hero">
   <div class="container">
-    <h1>Operating discipline that scales.</h1>
-    <p class="subhead">Fractional operations leadership for growth-stage marketplaces, fintech, and last-mile platforms. Built on operator math, not slide decks.</p>
+    <h1>After the deck. Before the team.</h1>
+    <p class="subhead">We turn board-approved strategy into a running operation. We sit between the consulting engagement and the in-house team, and we own the work until the operating math holds.</p>
+    <p class="lead"><strong>4 operations functions built from blank pages · $40M P&amp;L across 8 countries · 5M+ daily transactions at peak</strong></p>
     <div class="cta-row">
-      <a href="#contact" class="btn btn-primary">Get in touch</a>
-      <a href="#tools" class="btn btn-secondary">See the tools</a>
+      <a href="/contact" class="btn btn-primary">Book a 15-min intro</a>
+      <a href="/method" class="btn btn-secondary">See the method</a>
     </div>
   </div>
 </section>
 
-<section id="services">
+<section id="gap">
   <div class="container">
-    <div class="eyebrow">What we do</div>
+    <div class="eyebrow">The gap we work</div>
+    <h2>The strategy was not wrong. The operating engine was never built.</h2>
+    <div class="unmeasured">
+      <p>Most companies discover the gap the same way. A consulting firm delivered a 120-slide plan. The board approved it. Six months later, the operating metrics have not moved, the head of operations is interviewing replacements for two roles, and the founder is still the bottleneck on every cross-functional decision. The strategy was not wrong. The operating engine to run it was never built.</p>
+      <p style="margin-block-start: 1.25rem;">MBB firms cannot fill this gap because their delivery model is a leverage pyramid pointed at analysis, not at shipping. Hiring a full-time COO takes nine months on average, and the first three are spent learning a business the founder has already explained to four candidates. Fractional executive marketplaces solve a staffing problem, not an operating problem. Plenor is built for the period between the deck and the team, where the work is to install the cadence, the metric tree, and the owner map that make the strategy executable.</p>
+    </div>
+  </div>
+</section>
+
+<section id="modes">
+  <div class="container">
+    <div class="eyebrow">How we work</div>
     <h2>Three ways we work with operators.</h2>
     <div class="services-grid">
-      <div class="service">
-        <h3>Fractional ops leadership</h3>
-        <p>We come into ambiguity and ship the operating engine. PO and delivery workflow, vendor scorecard, capacity model, SOPs, reporting cadence. The work that gets the founder off the daily decision tree, demonstrably and permanently.</p>
-      </div>
-      <div class="service">
-        <h3>Strategic advisory</h3>
-        <p>Operating diligence for capital raises and M&amp;A. Vendor portfolio rationalization. Workforce planning. Quality and SLA frameworks. Outside operator review for boards and executive teams that need a second set of eyes before a major commitment.</p>
-      </div>
-      <div class="service">
-        <h3>Operating system design</h3>
-        <p>Documented playbooks for support, fraud, supply chain, fulfillment, customer care. The same patterns that took a regional marketplace from 2 hubs to a national footprint, written down so the next operator does not have to rediscover them.</p>
-      </div>
+      <article class="service">
+        <h3>Post-Strategy Operationalization</h3>
+        <p>Your board approved the plan. Nothing has shipped. We install the operating engine in 90 to 180 days and hand it to a named internal owner.</p>
+        <p style="margin-block-start: 1rem;"><a href="/engagements#mode-1">See engagement detail →</a></p>
+      </article>
+      <article class="service">
+        <h3>Fractional Operating Leadership</h3>
+        <p>Senior operator in the seat two to three days a week, six to twelve months, until you close the full-time hire or the function matures past needing one.</p>
+        <p style="margin-block-start: 1rem;"><a href="/engagements#mode-2">See engagement detail →</a></p>
+      </article>
+      <article class="service">
+        <h3>Operating Diligence &amp; Review</h3>
+        <p>Outside operator review for boards, PE sponsors, and founder check-ins. Two to six weeks. Written report and executive readout.</p>
+        <p style="margin-block-start: 1rem;"><a href="/engagements#mode-3">See engagement detail →</a></p>
+      </article>
     </div>
   </div>
 </section>
@@ -435,90 +222,67 @@
 <section id="proof">
   <div class="container">
     <div class="eyebrow">Proof in numbers</div>
-    <h2>15+ years building operations functions at scale.</h2>
+    <h2>15+ years of operating receipts.</h2>
     <div class="stats-grid">
       <div class="stat">
-        <div class="stat-num">4×</div>
+        <div class="stat-num">4&times;</div>
         <div class="stat-label">Operations functions built from blank pages</div>
       </div>
       <div class="stat">
         <div class="stat-num">8</div>
-        <div class="stat-label">Countries operated across</div>
+        <div class="stat-label">Countries of live operating responsibility</div>
       </div>
       <div class="stat">
         <div class="stat-num">$40M</div>
-        <div class="stat-label">P&amp;L ownership at most recent role</div>
+        <div class="stat-label">P&amp;L under direct operating ownership</div>
       </div>
       <div class="stat">
         <div class="stat-num">5M+</div>
-        <div class="stat-label">Daily transactions managed at peak</div>
+        <div class="stat-label">Daily transactions at peak load</div>
       </div>
       <div class="stat">
         <div class="stat-num">107%</div>
-        <div class="stat-label">Of revenue target hit last full year</div>
+        <div class="stat-label">Of revenue target delivered in the most recent full-cycle engagement</div>
       </div>
       <div class="stat">
-        <div class="stat-num">MBB</div>
-        <div class="stat-label">Lean Six Sigma Master Black Belt</div>
+        <div class="stat-num">9</div>
+        <div class="stat-label">Markets where operations shipped end-of-engagement</div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="tools">
+<section id="will-not-do">
   <div class="container">
-    <div class="eyebrow">Selected tools</div>
-    <h2>Open-source operating tools, built from years in the seat.</h2>
-    <p class="intro">Free decision support for ops leaders. No signup. No email gate. Use them in your next planning conversation.</p>
-    <div class="tools-grid">
-      <a href="https://everpaula.github.io/marketplace-ops-toolkit/vendor-scorecard.html" class="tool-card" target="_blank" rel="noopener">
-        <h3>Vendor Performance Scorecard</h3>
-        <p>Rank vendors by weighted math across on-time, defect, cost, lead time, response. A/B/C tiers with sensitivity analysis that flags when your weights are wrong.</p>
-      </a>
-      <a href="https://everpaula.github.io/marketplace-ops-toolkit/logistics-supply.html" class="tool-card" target="_blank" rel="noopener">
-        <h3>Logistics Supply Forecaster</h3>
-        <p>14-day capacity planning with backlog cascade and sensitivity at plus or minus 15% and 30% forecast error. Two personas, two granularities.</p>
-      </a>
-      <a href="https://everpaula.github.io/marketplace-ops-toolkit/workforce-forecast.html" class="tool-card" target="_blank" rel="noopener">
-        <h3>Workforce Forecast Calculator</h3>
-        <p>Multi-case-type capacity math for quarterly planning. In-house versus vendor split economics built in. The conversation most workforce planning meetings skip.</p>
-      </a>
-    </div>
-    <a href="https://everpaula.github.io/marketplace-ops-toolkit/" class="tool-link" target="_blank" rel="noopener">See all 10 tools</a>
-  </div>
-</section>
-
-<section id="about">
-  <div class="container">
-    <div class="eyebrow">About</div>
-    <h2>Built by an operator. For operators.</h2>
-    <div class="about-grid">
-      <div class="about-content">
-        <p><strong>Plenor Group</strong> operates at the meeting point of operator math and executive decisions. Founded by Everton Paula, Lean Six Sigma Master Black Belt with 15+ years building operations functions from zero.</p>
-        <p>Most recent role: Head of Business Operations at a global ride-hailing platform, $40M P&amp;L across 8 countries. Before that: scaling marketplace fulfillment across multiple regions, building courier operations across 9 markets at hypergrowth, and redesigning customer operations at a major insurance incumbent.</p>
-        <p>The thesis is simple. Most ops consulting sells slides. We ship the operating engine that holds up under load, then step away.</p>
-      </div>
-      <div class="about-pull">
-        "Operations is the place where the founder's vision meets the math of running a business every day. When that math breaks, the vision does too. Most companies need someone who can fix the math without breaking the team."
-        <div class="attribution">— Everton Paula, Founder</div>
-      </div>
+    <div class="eyebrow">Scope</div>
+    <h2>What we will not do.</h2>
+    <div class="unmeasured">
+      <ul role="list" style="display: grid; gap: 1rem; max-width: 42rem;">
+        <li>We do not write strategy. If you need a deck, hire a consulting firm.</li>
+        <li>We do not run analyst pyramids. One accountable operator owns your engagement.</li>
+        <li>We do not deliver decks as final artifacts. We deliver running systems.</li>
+        <li>We do not work with pre-revenue companies. The operating math has to exist for us to fix it.</li>
+        <li>We do not stay past the handoff. Permanent presence is a hiring decision, not a consulting one.</li>
+      </ul>
     </div>
   </div>
 </section>
 
-<section class="cta-banner" id="contact">
+<section class="cta-banner" id="book">
   <div class="container">
-    <div class="eyebrow" style="color: rgba(255,255,255,0.85);">Get in touch</div>
-    <h2>Have an operating problem worth solving?</h2>
-    <p>Write to us at <strong>contact@plenorgroup.com</strong> with the shape of the problem and a few lines about timeline. We respond within two business days.</p>
+    <div class="eyebrow">Ready to talk</div>
+    <h2>Fifteen minutes is enough to know if Plenor fits the problem.</h2>
+    <p>contact@plenorgroup.com</p>
     <div class="cta-row">
-      <a href="mailto:contact@plenorgroup.com?subject=Plenor%20Group%20inquiry" class="btn btn-primary">Email us</a>
-      <a href="https://linkedin.com/in/evertonpaula" class="btn btn-secondary" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="/contact" class="btn btn-primary">Book a 15-min intro</a>
+      <a href="mailto:contact@plenorgroup.com?subject=Plenor%20Group%20inquiry" class="btn btn-secondary">Email us</a>
     </div>
   </div>
 </section>
 
-<footer>
+</main>
+
+<footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-col">
@@ -542,6 +306,35 @@
     </div>
   </div>
 </footer>
+
+<a href="/contact" class="mobile-book-fab" aria-label="Book a 15 minute intro">Book 15 min</a>
+
+<script>
+  (function () {
+    var toggleBtn = document.querySelector('.site-header .nav-toggle');
+    var overlay = document.getElementById('nav-overlay');
+    var closeBtn = overlay ? overlay.querySelector('[data-close]') : null;
+    if (!toggleBtn || !overlay) return;
+    function open() {
+      overlay.setAttribute('data-open', 'true');
+      toggleBtn.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+    function close() {
+      overlay.setAttribute('data-open', 'false');
+      toggleBtn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+    toggleBtn.addEventListener('click', open);
+    if (closeBtn) closeBtn.addEventListener('click', close);
+    overlay.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', close);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && overlay.getAttribute('data-open') === 'true') close();
+    });
+  })();
+</script>
 
 </body>
 </html>

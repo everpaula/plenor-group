@@ -1,0 +1,1089 @@
+/* ==========================================================================
+   Plenor Group — Shared Stylesheet
+   --------------------------------------------------------------------------
+   Brand:        Plenor Group LLC (Tampa, FL)
+   Version:      2.0.0  (rebuild — 6-page static site)
+   Last updated: Generated 2026-06-01
+   Author:       UI Designer agent, on Brand Guardian direction
+
+   Design intent (from Brand Guardian):
+     - Printed-page institutional feel. Ink-on-cream, not screen-on-screen.
+     - Navy is structural. Burnt sienna (--signal) is the one editorial accent
+       the eye lands on per section. Used sparingly.
+     - Typography pairing kept: Source Serif 4 (display) + Inter (text).
+     - Self-hosted fonts. No Google Fonts CDN. No icons. No stock photos.
+     - One animation on the entire site: 300ms fade-in on hero h1.
+     - Hover states change BORDER COLOR ONLY. No transforms, no shadow shifts.
+
+   Decisions documented in code:
+     - No --shadow-card token. Cards lift via border-color change only.
+     - Dark mode NOT shipped in v1. Future work; tokens are structured for it.
+     - CSS logical properties used where free (margin-block, padding-inline)
+       so future i18n / RTL costs nothing.
+   ========================================================================== */
+
+
+/* ==========================================================================
+   1. CSS Custom Properties
+   ========================================================================== */
+
+:root {
+  /* ---- Color tokens ---- */
+  /* Page surfaces */
+  --bg:          #fafaf6;   /* cream — primary page background */
+  --bg-elev:     #f4f3ed;   /* paper warm — cards, pull quotes, elevated blocks */
+
+  /* Text */
+  --text:        #0e1116;   /* ink black — sharper than #1a1a1a, printed-page feel */
+  --text-muted:  #4a4a4a;   /* body secondary (verified 8.4:1 on --bg, AAA) */
+  --text-soft:   #7a7a7a;   /* tertiary, attributions, meta (4.6:1 on --bg, AA) */
+
+  /* Structural accent (navy) — links, primary CTA, vertical rules */
+  --accent:        #1e3a8a;
+  --accent-hover:  #16306b;
+
+  /* Editorial signal (burnt sienna) — stat numbers, key callouts, eyebrows */
+  /* One color the eye lands on per section. Use with restraint. */
+  --signal:      #c2410c;
+
+  /* Lines */
+  --border:      #e5e3dc;
+
+  /* ---- Type families ---- */
+  --serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+  --sans:  'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* ---- Layout tokens ---- */
+  --container-max:    1120px;
+  --container-pad:    2rem;
+  --container-pad-sm: 1.25rem;
+
+  /* ---- Section rhythm ---- */
+  --section-y:    7rem;     /* desktop section padding-block */
+  --section-y-sm: 4.5rem;   /* mobile section padding-block */
+  --hero-top:     9rem;
+  --hero-bottom:  7rem;
+  --hero-top-sm:  6rem;
+  --hero-bot-sm:  5rem;
+
+  /* ---- Type scale base ---- */
+  --fz-body:    1.125rem;   /* 18px */
+  --lh-body:    1.65;
+
+  /* ---- Motion ---- */
+  --fade-in:    300ms ease-out;
+
+  /* ---- Sticky header offset (used for scroll-margin) ---- */
+  --sticky-offset: 80px;
+}
+
+
+/* ==========================================================================
+   2. Font self-hosting
+   --------------------------------------------------------------------------
+   Files expected under /fonts/, Latin subset, woff2 only.
+   font-display: swap — text paints in fallback first, no FOIT.
+   unicode-range narrows download to Latin glyphs only.
+   ========================================================================== */
+
+/* --- Inter (body, 4 weights) --- */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/inter-latin-400.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+                 U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193,
+                 U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/inter-latin-500.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+                 U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193,
+                 U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/inter-latin-600.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+                 U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193,
+                 U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/inter-latin-700.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+                 U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193,
+                 U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* --- Source Serif 4 (display, 4 weights, regular + italic for pull quote) --- */
+@font-face {
+  font-family: 'Source Serif 4';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/source-serif-4-latin-400.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+                 U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193,
+                 U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Source Serif 4';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/source-serif-4-latin-400-italic.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+                 U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193,
+                 U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Source Serif 4';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/source-serif-4-latin-500.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+                 U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193,
+                 U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Source Serif 4';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/source-serif-4-latin-500-italic.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+                 U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193,
+                 U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Source Serif 4';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/source-serif-4-latin-600.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+                 U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193,
+                 U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Source Serif 4';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/source-serif-4-latin-700.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+                 U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193,
+                 U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+
+/* ==========================================================================
+   3. Reset + base
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--sans);
+  font-size: var(--fz-body);
+  line-height: var(--lh-body);
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: 'kern' 1, 'liga' 1;
+}
+
+img,
+picture,
+video,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 150ms ease;
+}
+a:hover {
+  color: var(--accent-hover);
+}
+
+/* Native bold in body text keeps semantic weight without changing color */
+b, strong {
+  font-weight: 600;
+  color: var(--text);
+}
+
+
+/* ==========================================================================
+   4. Container
+   ========================================================================== */
+
+.container {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+}
+
+
+/* ==========================================================================
+   5. Typography scale
+   --------------------------------------------------------------------------
+   Display sizes use letter-spacing -0.028em (tighter than v1's -0.022em).
+   Body p has a comfortable measure: max-width 38rem in default text contexts.
+   ========================================================================== */
+
+h1, h2, h3, h4 {
+  font-family: var(--serif);
+  color: var(--text);
+  line-height: 1.15;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+  letter-spacing: -0.028em;
+  line-height: 1.05;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: clamp(1.9rem, 3.2vw, 2.6rem);
+  letter-spacing: -0.028em;
+  line-height: 1.18;
+  max-width: 26ch;
+  margin-block-end: 2.25rem;
+}
+
+h3 {
+  font-weight: 600;
+  font-size: 1.3rem;
+  letter-spacing: -0.012em;
+  line-height: 1.25;
+}
+
+h4 {
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: -0.005em;
+  line-height: 1.3;
+}
+
+p {
+  max-width: 38rem;
+}
+
+/* Allow p to be unconstrained inside layout containers that already measure it */
+.unmeasured p,
+.stat-label,
+.cta-banner p,
+.footer-tagline {
+  max-width: none;
+}
+
+
+/* ==========================================================================
+   6. Header  (sticky, blurred)
+   ========================================================================== */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  padding-block: 2rem; /* 2rem breathing room above + below the wordmark */
+  background: rgba(250, 250, 246, 0.94);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+/* Wordmark — Source Serif 4 weight 500, tight tracking. No glyph. */
+.brand {
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.brand:hover {
+  color: var(--text);
+}
+
+
+/* ==========================================================================
+   7. Navigation
+   --------------------------------------------------------------------------
+   Desktop: horizontal links + primary CTA pill.
+   Mobile: hamburger toggle reveals a full-screen overlay with vertical stack
+   and a "Book a call" button pinned to the bottom.
+   ========================================================================== */
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2.2rem;
+}
+
+.nav-links a:not(.btn) {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+.nav-links a:not(.btn):hover {
+  color: var(--text);
+}
+
+.nav-links .btn {
+  padding: 0.5rem 1rem;
+  font-size: 0.92rem;
+}
+
+/* Mobile hamburger trigger — hidden on desktop */
+.nav-toggle {
+  display: none;
+  appearance: none;
+  background: transparent;
+  border: 0;
+  padding: 0.5rem;
+  cursor: pointer;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--text);
+}
+
+/* Mobile overlay (closed by default) */
+.nav-overlay {
+  display: none;
+}
+
+.nav-overlay[data-open='true'] {
+  display: flex;
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem 1.5rem 2.5rem;
+  background: var(--bg);
+}
+
+.nav-overlay header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-overlay .nav-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-block-start: 4rem;
+}
+.nav-overlay .nav-stack a {
+  font-family: var(--serif);
+  font-size: 1.75rem;
+  font-weight: 500;
+  letter-spacing: -0.018em;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.nav-overlay .nav-cta {
+  margin-block-start: auto;
+}
+
+
+/* ==========================================================================
+   8. Buttons
+   --------------------------------------------------------------------------
+   No transform on hover. Background or border color change only.
+   ========================================================================== */
+
+.btn {
+  display: inline-block;
+  padding: 0.9rem 1.5rem;
+  font-family: var(--sans);
+  font-size: 0.96rem;
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background: var(--accent-hover);
+  color: #fff;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text);
+  border-color: var(--border);
+}
+.btn-secondary:hover,
+.btn-secondary:focus-visible {
+  border-color: var(--text);
+  color: var(--text);
+}
+
+/* Editorial emphasis only — use sparingly. One per page ceiling. */
+.btn-signal {
+  background: var(--signal);
+  color: #fff;
+}
+.btn-signal:hover,
+.btn-signal:focus-visible {
+  background: #a93609; /* one step darker than --signal */
+  color: #fff;
+}
+
+
+/* ==========================================================================
+   9. Section pattern
+   --------------------------------------------------------------------------
+   Eyebrow (uppercase, --signal) → h2 → lead paragraph → content.
+   ========================================================================== */
+
+section {
+  padding-block: var(--section-y);
+  border-bottom: 1px solid var(--border);
+  scroll-margin-top: var(--sticky-offset);
+}
+
+.eyebrow {
+  font-family: var(--sans);
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--signal);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-block-end: 0.9rem;
+}
+
+.lead {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  max-width: 40rem;
+  margin-block-end: 2.25rem;
+  line-height: 1.55;
+}
+
+
+/* ==========================================================================
+   10. Hero pattern
+   --------------------------------------------------------------------------
+   Optional secondary surface (B&W architectural geometry) lives in
+   .hero-surface — a CSS-only diagonal line pattern. Used once on the site,
+   with weight. No icons, no stock photo.
+   ========================================================================== */
+
+.hero {
+  padding-block: var(--hero-top) var(--hero-bottom);
+  border-bottom: 1px solid var(--border);
+  scroll-margin-top: var(--sticky-offset);
+}
+
+.hero h1 {
+  max-width: 16ch;
+  margin-block-end: 1.75rem;
+  letter-spacing: -0.022em; /* hero h1 slightly looser than display H2 by intent */
+}
+
+.hero .subhead {
+  font-size: 1.22rem;
+  color: var(--text-muted);
+  max-width: 38rem;
+  line-height: 1.5;
+  margin-block-end: 2.75rem;
+}
+
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+}
+
+/* Optional hero secondary surface — used at most ONCE on the site, with weight.
+   A subtle diagonal line pattern (architectural geometry). B&W only. */
+.hero-surface {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  margin-block-start: 4rem;
+  background-color: var(--bg-elev);
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgba(14, 17, 22, 0.06) 0 1px,
+    transparent 1px 14px
+  );
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+
+/* ==========================================================================
+   11. Stats grid  (3-up or 6-up)
+   --------------------------------------------------------------------------
+   Stat numbers now use --signal (burnt sienna), not --accent. Editorial.
+   ========================================================================== */
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.25rem;
+  margin-block-start: 1rem;
+}
+
+.stat {
+  padding: 2rem 1.6rem;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  transition: border-color 180ms ease;
+}
+.stat:hover {
+  border-color: var(--accent);
+}
+
+.stat-num {
+  font-family: var(--serif);
+  font-size: 2.6rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.015em;
+  color: var(--signal);
+  margin-block-end: 0.5rem;
+}
+
+.stat-label {
+  font-family: var(--sans);
+  font-size: 0.93rem;
+  line-height: 1.4;
+  color: var(--text-muted);
+}
+
+
+/* ==========================================================================
+   12. Card patterns
+   --------------------------------------------------------------------------
+   Service cards, tool cards, case study cards.
+   Hover: border-color → --accent only. No transforms. No shadows.
+   ========================================================================== */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.card {
+  display: block;
+  padding: 1.75rem 1.5rem;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: inherit;
+  text-decoration: none;
+  transition: border-color 180ms ease;
+}
+.card:hover,
+.card:focus-visible {
+  border-color: var(--accent);
+}
+
+.card h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-block-end: 0.55rem;
+  color: var(--text);
+}
+
+.card p {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+  max-width: none;
+}
+
+/* Service card variant — slightly more open spacing, no surrounding chrome */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 3rem;
+  margin-block-start: 1rem;
+}
+.service h3 {
+  margin-block-end: 0.8rem;
+  font-size: 1.3rem;
+}
+.service p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  max-width: none;
+}
+
+/* Tool card — same as .card. Inline arrow indicator removed (no icons).
+   Use a trailing "→" character only if absolutely necessary in copy. */
+
+
+/* ==========================================================================
+   13. Pull quote pattern
+   ========================================================================== */
+
+.pull-quote {
+  padding: 1.75rem;
+  background: var(--bg-elev);
+  border-inline-start: 3px solid var(--accent);
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  letter-spacing: -0.005em;
+  color: var(--text);
+  max-width: none;
+}
+
+.pull-quote .attribution {
+  display: block;
+  margin-block-start: 1rem;
+  font-family: var(--sans);
+  font-style: normal;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--text-soft);
+}
+
+
+/* ==========================================================================
+   About / two-column layouts
+   ========================================================================== */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+.about-content p {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+  max-width: none;
+  margin-block-end: 1.15rem;
+}
+.about-content p:last-child {
+  margin-block-end: 0;
+}
+
+
+/* ==========================================================================
+   CTA banner (navy)
+   ========================================================================== */
+
+.cta-banner {
+  padding-block: 4rem;
+  background: var(--accent);
+  color: #fff;
+  border-bottom: none;
+}
+.cta-banner h2,
+.cta-banner h3 {
+  color: #fff;
+  max-width: 22ch;
+  margin-block-end: 1rem;
+}
+.cta-banner p {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 36rem;
+  margin-block-end: 2rem;
+}
+.cta-banner .eyebrow {
+  color: rgba(255, 255, 255, 0.85);
+}
+.cta-banner .btn-primary {
+  background: #fff;
+  color: var(--accent);
+}
+.cta-banner .btn-primary:hover,
+.cta-banner .btn-primary:focus-visible {
+  background: var(--bg);
+  color: var(--accent);
+}
+.cta-banner .btn-secondary {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.4);
+}
+.cta-banner .btn-secondary:hover,
+.cta-banner .btn-secondary:focus-visible {
+  border-color: #fff;
+  color: #fff;
+}
+
+
+/* ==========================================================================
+   14. Footer
+   ========================================================================== */
+
+.site-footer {
+  padding-block: 4rem 2rem;
+  background: var(--bg);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 3rem;
+  margin-block-end: 3rem;
+}
+
+.footer-col h4 {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-soft);
+  margin-block-end: 1rem;
+}
+
+.footer-col a {
+  display: block;
+  margin-block-end: 0.55rem;
+  font-size: 0.98rem;
+  color: var(--text);
+  text-decoration: none;
+}
+.footer-col a:hover {
+  color: var(--accent);
+}
+
+.footer-tagline {
+  max-width: 26rem;
+  margin-block-start: 1rem;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-block-start: 1.5rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.88rem;
+  color: var(--text-soft);
+}
+
+
+/* ==========================================================================
+   15. Hero h1 fade-in  (the ONE motion on the site)
+   --------------------------------------------------------------------------
+   300ms ease-out opacity fade. Wrapped in prefers-reduced-motion: no-preference
+   so reduced-motion users see h1 immediately.
+   ========================================================================== */
+
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes plenor-fade-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  .hero h1 {
+    animation: plenor-fade-in var(--fade-in) both;
+  }
+}
+
+
+/* ==========================================================================
+   16. Focus states
+   --------------------------------------------------------------------------
+   Keyboard users get a clearly visible navy outline. Mouse users do not.
+   ========================================================================== */
+
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.btn:focus-visible {
+  outline-offset: 3px;
+}
+
+
+/* ==========================================================================
+   17. Accessibility utilities
+   ========================================================================== */
+
+/* Screen-reader-only content */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Skip link — visible only when focused */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  padding: 0.6rem 1rem;
+  background: var(--text);
+  color: var(--bg);
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 4px;
+  z-index: 200;
+  transition: top 180ms ease;
+}
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* All anchor targets inherit scroll-margin so sticky header doesn't clip them */
+[id] {
+  scroll-margin-top: var(--sticky-offset);
+}
+
+/* Reduced motion — disable the one animation we ship */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .hero h1 {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+
+/* ==========================================================================
+   18. Mobile breakpoint (single, at 768px)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+
+  .container {
+    padding-inline: var(--container-pad-sm);
+  }
+
+  /* Sections — tighter rhythm on mobile */
+  section {
+    padding-block: var(--section-y-sm);
+  }
+
+  /* Hero — keep generous but bring the floor up */
+  .hero {
+    padding-block: var(--hero-top-sm) var(--hero-bot-sm);
+  }
+  .hero .subhead {
+    font-size: 1.1rem;
+    margin-block-end: 2rem;
+  }
+
+  /* Header — keep wordmark + primary CTA visible. Hide secondary anchors,
+     reveal the hamburger. JS toggles [data-open] on .nav-overlay. */
+  .site-header {
+    padding-block: 1.5rem;
+  }
+  .nav-links a:not(.btn-primary) {
+    display: none;
+  }
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  /* Headlines compress slightly */
+  h2 {
+    margin-block-end: 1.75rem;
+  }
+
+  /* About / two-column → single column */
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  /* Services / cards — drop column gap a touch */
+  .services-grid {
+    gap: 2rem;
+  }
+
+  /* Footer — collapse to single column */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-block-end: 2rem;
+  }
+  .footer-bottom {
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  /* CTA banner — match new mobile rhythm */
+  .cta-banner {
+    padding-block: 3rem;
+  }
+
+  /* CTA row — stack full-width on the smallest screens */
+  .cta-row .btn {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+}
+
+
+/* ==========================================================================
+   19. Print styles
+   --------------------------------------------------------------------------
+   Strip chrome. Black ink on white. Full-width content. No background art.
+   ========================================================================== */
+
+@media print {
+  :root {
+    --bg: #ffffff;
+    --bg-elev: #ffffff;
+    --text: #000000;
+    --text-muted: #222222;
+    --text-soft: #444444;
+    --accent: #000000;
+    --accent-hover: #000000;
+    --signal: #000000;
+    --border: #cccccc;
+  }
+
+  *,
+  *::before,
+  *::after {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  body {
+    font-size: 11pt;
+    line-height: 1.45;
+  }
+
+  .site-header,
+  .nav-toggle,
+  .nav-overlay,
+  .skip-link,
+  .cta-banner,
+  .site-footer .footer-bottom {
+    display: none !important;
+  }
+
+  .container {
+    max-width: none;
+    padding-inline: 0;
+  }
+
+  section,
+  .hero {
+    padding-block: 1.5rem;
+    border-bottom: 1px solid #ccc;
+    page-break-inside: avoid;
+  }
+
+  h1, h2, h3, h4 {
+    page-break-after: avoid;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+  a[href^='http']::after {
+    content: ' (' attr(href) ')';
+    font-size: 90%;
+    color: #444;
+  }
+
+  .hero-surface {
+    display: none;
+  }
+}
+
+
+/* ==========================================================================
+   End of file — Plenor Group v2.0.0
+   ========================================================================== */
