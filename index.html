@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plenor Group · Operating discipline that scales</title>
+<meta name="description" content="Fractional operations leadership for growth-stage marketplaces, fintech, and last-mile platforms. Built on operator math.">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://plenorgroup.com">
+<meta property="og:title" content="Plenor Group · Operating discipline that scales">
+<meta property="og:description" content="Fractional operations leadership for growth-stage marketplaces, fintech, and last-mile platforms. Built on operator math.">
+<meta property="og:image" content="https://plenorgroup.com/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Plenor Group · Operating discipline that scales">
+<meta name="twitter:description" content="Fractional operations leadership for growth-stage marketplaces, fintech, and last-mile platforms.">
+<meta name="twitter:image" content="https://plenorgroup.com/og-image.jpg">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231e3a8a'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='62' font-weight='600' fill='%23fafaf6' text-anchor='middle'%3EP%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #fafaf6;
+    --bg-elev: #f4f3ed;
+    --text: #1a1a1a;
+    --text-muted: #4a4a4a;
+    --text-soft: #7a7a7a;
+    --accent: #1e3a8a;
+    --accent-hover: #16306b;
+    --accent-soft: #e8edf8;
+    --border: #e5e3dc;
+    --serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .container { max-width: 1120px; margin: 0 auto; padding: 0 2rem; }
+
+  /* Header */
+  header {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    background: rgba(250, 250, 246, 0.94);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 50;
+  }
+  header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .brand {
+    font-family: var(--serif);
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    color: var(--text);
+    text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 2.2rem; align-items: center; }
+  .nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.15s ease;
+  }
+  .nav-links a:hover { color: var(--accent); }
+  .nav-links .btn { padding: 0.5rem 1rem; font-size: 0.92rem; }
+
+  /* Hero */
+  .hero {
+    padding: 7rem 0 6rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+    line-height: 1.05;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 1.75rem;
+    letter-spacing: -0.022em;
+    max-width: 16ch;
+  }
+  .hero .subhead {
+    font-size: 1.22rem;
+    color: var(--text-muted);
+    max-width: 38rem;
+    margin-bottom: 2.75rem;
+    line-height: 1.5;
+  }
+  .cta-row { display: flex; gap: 0.85rem; flex-wrap: wrap; }
+  .btn {
+    display: inline-block;
+    padding: 0.9rem 1.5rem;
+    font-size: 0.96rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.18s ease;
+    font-family: var(--sans);
+    border: 1px solid transparent;
+    cursor: pointer;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: #fff;
+  }
+  .btn-primary:hover { background: var(--accent-hover); transform: translateY(-1px); }
+  .btn-secondary {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border);
+  }
+  .btn-secondary:hover { border-color: var(--text); }
+
+  /* Sections */
+  section {
+    padding: 5.5rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .eyebrow {
+    font-size: 0.76rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 0.9rem;
+  }
+  h2 {
+    font-family: var(--serif);
+    font-size: clamp(1.9rem, 3.2vw, 2.6rem);
+    font-weight: 600;
+    line-height: 1.18;
+    color: var(--text);
+    margin-bottom: 2.25rem;
+    letter-spacing: -0.012em;
+    max-width: 26ch;
+  }
+
+  /* What we do */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 3rem;
+    margin-top: 1rem;
+  }
+  .service h3 {
+    font-family: var(--serif);
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    color: var(--text);
+    letter-spacing: -0.005em;
+  }
+  .service p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  /* Stats */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.25rem;
+    margin-top: 1rem;
+  }
+  .stat {
+    border: 1px solid var(--border);
+    padding: 2rem 1.6rem;
+    background: var(--bg-elev);
+    border-radius: 10px;
+    transition: border-color 0.15s ease;
+  }
+  .stat:hover { border-color: var(--accent); }
+  .stat-num {
+    font-family: var(--serif);
+    font-size: 2.6rem;
+    font-weight: 600;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.015em;
+  }
+  .stat-label {
+    font-size: 0.93rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+  }
+
+  /* Tools */
+  #tools .intro {
+    color: var(--text-muted);
+    max-width: 40rem;
+    margin-bottom: 2.25rem;
+    font-size: 1.05rem;
+  }
+  .tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+    margin: 0 0 2rem;
+  }
+  .tool-card {
+    border: 1px solid var(--border);
+    padding: 1.75rem 1.5rem;
+    border-radius: 10px;
+    background: var(--bg-elev);
+    transition: all 0.18s ease;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+  .tool-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(30, 58, 138, 0.08);
+  }
+  .tool-card h3 {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 0.55rem;
+    color: var(--text);
+  }
+  .tool-card p {
+    color: var(--text-muted);
+    font-size: 0.93rem;
+    line-height: 1.55;
+  }
+  .tool-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--accent);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.98rem;
+  }
+  .tool-link::after {
+    content: '→';
+    transition: transform 0.15s ease;
+  }
+  .tool-link:hover::after { transform: translateX(3px); }
+
+  /* About */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  .about-content p {
+    color: var(--text-muted);
+    margin-bottom: 1.15rem;
+    font-size: 1.05rem;
+    line-height: 1.65;
+  }
+  .about-content p strong { color: var(--text); font-weight: 600; }
+  .about-pull {
+    background: var(--bg-elev);
+    border-left: 3px solid var(--accent);
+    padding: 1.75rem 1.75rem;
+    font-family: var(--serif);
+    font-size: 1.25rem;
+    line-height: 1.4;
+    color: var(--text);
+    font-style: italic;
+    letter-spacing: -0.005em;
+  }
+  .about-pull .attribution {
+    font-family: var(--sans);
+    font-style: normal;
+    font-size: 0.85rem;
+    color: var(--text-soft);
+    margin-top: 1rem;
+    letter-spacing: 0.02em;
+  }
+  @media (max-width: 768px) {
+    .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+  }
+
+  /* CTA banner */
+  .cta-banner {
+    background: var(--accent);
+    color: #fff;
+    padding: 4rem 0;
+    border-bottom: none;
+  }
+  .cta-banner h2 {
+    color: #fff;
+    margin-bottom: 1rem;
+    max-width: 22ch;
+  }
+  .cta-banner p {
+    color: rgba(255,255,255,0.85);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    max-width: 36rem;
+  }
+  .cta-banner .btn-primary {
+    background: #fff;
+    color: var(--accent);
+  }
+  .cta-banner .btn-primary:hover { background: var(--bg); }
+  .cta-banner .btn-secondary {
+    color: #fff;
+    border-color: rgba(255,255,255,0.4);
+  }
+  .cta-banner .btn-secondary:hover { border-color: #fff; }
+
+  /* Footer */
+  footer {
+    padding: 4rem 0 2rem;
+    background: var(--bg);
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+  .footer-col h4 {
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+    color: var(--text-soft);
+    font-weight: 700;
+  }
+  .footer-col a {
+    display: block;
+    color: var(--text);
+    text-decoration: none;
+    margin-bottom: 0.55rem;
+    font-size: 0.98rem;
+    transition: color 0.15s ease;
+  }
+  .footer-col a:hover { color: var(--accent); }
+  .footer-bottom {
+    border-top: 1px solid var(--border);
+    padding-top: 1.5rem;
+    color: var(--text-soft);
+    font-size: 0.88rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .footer-tagline {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    max-width: 26rem;
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .container { padding: 0 1.25rem; }
+    .nav-links a:not(.btn) { display: none; }
+    .hero { padding: 4.5rem 0 4rem; }
+    section { padding: 3.5rem 0; }
+    .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .cta-banner { padding: 3rem 0; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <a href="/" class="brand">Plenor Group</a>
+    <nav class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#proof">Proof</a>
+      <a href="#tools">Tools</a>
+      <a href="#contact" class="btn btn-primary">Get in touch</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1>Operating discipline that scales.</h1>
+    <p class="subhead">Fractional operations leadership for growth-stage marketplaces, fintech, and last-mile platforms. Built on operator math, not slide decks.</p>
+    <div class="cta-row">
+      <a href="#contact" class="btn btn-primary">Get in touch</a>
+      <a href="#tools" class="btn btn-secondary">See the tools</a>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+    <div class="eyebrow">What we do</div>
+    <h2>Three ways we work with operators.</h2>
+    <div class="services-grid">
+      <div class="service">
+        <h3>Fractional ops leadership</h3>
+        <p>We come into ambiguity and ship the operating engine. PO and delivery workflow, vendor scorecard, capacity model, SOPs, reporting cadence. The work that gets the founder off the daily decision tree, demonstrably and permanently.</p>
+      </div>
+      <div class="service">
+        <h3>Strategic advisory</h3>
+        <p>Operating diligence for capital raises and M&amp;A. Vendor portfolio rationalization. Workforce planning. Quality and SLA frameworks. Outside operator review for boards and executive teams that need a second set of eyes before a major commitment.</p>
+      </div>
+      <div class="service">
+        <h3>Operating system design</h3>
+        <p>Documented playbooks for support, fraud, supply chain, fulfillment, customer care. The same patterns that took a regional marketplace from 2 hubs to a national footprint, written down so the next operator does not have to rediscover them.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="proof">
+  <div class="container">
+    <div class="eyebrow">Proof in numbers</div>
+    <h2>15+ years building operations functions at scale.</h2>
+    <div class="stats-grid">
+      <div class="stat">
+        <div class="stat-num">4×</div>
+        <div class="stat-label">Operations functions built from blank pages</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">8</div>
+        <div class="stat-label">Countries operated across</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">$40M</div>
+        <div class="stat-label">P&amp;L ownership at most recent role</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">5M+</div>
+        <div class="stat-label">Daily transactions managed at peak</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">107%</div>
+        <div class="stat-label">Of revenue target hit last full year</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">MBB</div>
+        <div class="stat-label">Lean Six Sigma Master Black Belt</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="tools">
+  <div class="container">
+    <div class="eyebrow">Selected tools</div>
+    <h2>Open-source operating tools, built from years in the seat.</h2>
+    <p class="intro">Free decision support for ops leaders. No signup. No email gate. Use them in your next planning conversation.</p>
+    <div class="tools-grid">
+      <a href="https://everpaula.github.io/marketplace-ops-toolkit/vendor-scorecard.html" class="tool-card" target="_blank" rel="noopener">
+        <h3>Vendor Performance Scorecard</h3>
+        <p>Rank vendors by weighted math across on-time, defect, cost, lead time, response. A/B/C tiers with sensitivity analysis that flags when your weights are wrong.</p>
+      </a>
+      <a href="https://everpaula.github.io/marketplace-ops-toolkit/logistics-supply.html" class="tool-card" target="_blank" rel="noopener">
+        <h3>Logistics Supply Forecaster</h3>
+        <p>14-day capacity planning with backlog cascade and sensitivity at plus or minus 15% and 30% forecast error. Two personas, two granularities.</p>
+      </a>
+      <a href="https://everpaula.github.io/marketplace-ops-toolkit/workforce-forecast.html" class="tool-card" target="_blank" rel="noopener">
+        <h3>Workforce Forecast Calculator</h3>
+        <p>Multi-case-type capacity math for quarterly planning. In-house versus vendor split economics built in. The conversation most workforce planning meetings skip.</p>
+      </a>
+    </div>
+    <a href="https://everpaula.github.io/marketplace-ops-toolkit/" class="tool-link" target="_blank" rel="noopener">See all 10 tools</a>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <div class="eyebrow">About</div>
+    <h2>Built by an operator. For operators.</h2>
+    <div class="about-grid">
+      <div class="about-content">
+        <p><strong>Plenor Group</strong> operates at the meeting point of operator math and executive decisions. Founded by Everton Paula, Lean Six Sigma Master Black Belt with 15+ years building operations functions from zero.</p>
+        <p>Most recent role: Head of Business Operations at a global ride-hailing platform, $40M P&amp;L across 8 countries. Before that: scaling marketplace fulfillment across multiple regions, building courier operations across 9 markets at hypergrowth, and redesigning customer operations at a major insurance incumbent.</p>
+        <p>The thesis is simple. Most ops consulting sells slides. We ship the operating engine that holds up under load, then step away.</p>
+      </div>
+      <div class="about-pull">
+        "Operations is the place where the founder's vision meets the math of running a business every day. When that math breaks, the vision does too. Most companies need someone who can fix the math without breaking the team."
+        <div class="attribution">— Everton Paula, Founder</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-banner" id="contact">
+  <div class="container">
+    <div class="eyebrow" style="color: rgba(255,255,255,0.85);">Get in touch</div>
+    <h2>Have an operating problem worth solving?</h2>
+    <p>Write to us at <strong>contact@plenorgroup.com</strong> with the shape of the problem and a few lines about timeline. We respond within two business days.</p>
+    <div class="cta-row">
+      <a href="mailto:contact@plenorgroup.com?subject=Plenor%20Group%20inquiry" class="btn btn-primary">Email us</a>
+      <a href="https://linkedin.com/in/evertonpaula" class="btn btn-secondary" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="brand">Plenor Group</div>
+        <p class="footer-tagline">Operations consulting for growth-stage teams. Tampa, Florida. Available remote and on-site.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Get in touch</h4>
+        <a href="mailto:contact@plenorgroup.com">contact@plenorgroup.com</a>
+        <a href="https://linkedin.com/in/evertonpaula" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <div class="footer-col">
+        <h4>Tools</h4>
+        <a href="https://everpaula.github.io/marketplace-ops-toolkit/" target="_blank" rel="noopener">Marketplace Ops Toolkit</a>
+        <a href="https://github.com/everpaula" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>&copy; 2026 Plenor Group LLC. All rights reserved.</div>
+      <div>Tampa, FL · USA</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
