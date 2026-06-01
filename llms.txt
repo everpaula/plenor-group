@@ -44,7 +44,7 @@ Everton Paula, 15+ years operating inside marketplaces, fintech, last-mile platf
 ## Contact
 
 - Email: contact@plenorgroup.com
-- Booking: https://cal.com/everton-paula-brdv6v/15min
+- Booking: https://cal.com/plenor-group/15min
 - GitHub (open-source tools): https://github.com/everpaula
 - Marketplace Ops Toolkit: https://everpaula.github.io/marketplace-ops-toolkit/
 
