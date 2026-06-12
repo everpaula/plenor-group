@@ -6,6 +6,8 @@
 
 Plenor operates in three modes. Mode 1 is post-strategy operationalization: 90 to 180 days, fixed-scope, phase-billed, installs the operating engine after a board-approved strategy and hands off to a named internal owner. Mode 2 is fractional operating leadership: 6 to 12 months, monthly retainer, 2 to 3 days per week, senior operator in the seat until a full-time hire is closed with a 30-day overlap. Mode 3 is operating diligence and review: 2 to 6 weeks, day-rate or fixed-fee, written report (12 to 20 pages) and executive readout for boards, PE sponsors, and founders.
 
+The entry offer is the Operating Teardown: a one-week, fixed-fee read on an operation. One operator delivers a short written document naming the three to five things breaking the operation, ranked by operating cost, with the fix sequence and a 60-minute readout. It is Phase 1 of the Bridge Method (Diagnose) sold standalone, and the fee is credited in full toward a Mode 1 or Mode 2 engagement booked within 30 days of the readout.
+
 The core method is the Bridge Method, a four-phase engagement: Diagnose (weeks 1 to 2), Design (weeks 2 to 4), Stand up (months 2 to 4), Hand off (month 5 and after). Phases compress for diligence and extend for fractional leadership; the structure stays the same.
 
 ## Who Plenor is for
@@ -36,8 +38,12 @@ Everton Paula, 15+ years operating inside marketplaces, fintech, last-mile platf
 
 - Home: https://plenorgroup.com/
 - The Bridge Method: https://plenorgroup.com/method
+- Operating Teardown (entry offer, one week, fixed fee): https://plenorgroup.com/teardown
 - Engagements (3 modes): https://plenorgroup.com/engagements
 - Work (case studies): https://plenorgroup.com/work
+- Insights (operating notes): https://plenorgroup.com/insights
+- How to install a weekly operating cadence: https://plenorgroup.com/insights/operating-cadence
+- The one-page operating diagnostic: https://plenorgroup.com/insights/operating-diagnostic
 - About (founder): https://plenorgroup.com/about
 - Contact (book 15-min intro): https://plenorgroup.com/contact
 
