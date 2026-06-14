@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to run a root cause analysis (5 Whys and fishbone) · Plenor Group</title>
+<meta name="description" content="A root cause analysis fixes the cause, not the symptom. How to run one with the 5 Whys and the fishbone diagram, a worked example, the format to document it, and the mistakes that make it fail.">
+<link rel="canonical" href="https://plenorgroup.com/insights/root-cause-analysis">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://plenorgroup.com/insights/root-cause-analysis">
+<meta property="og:title" content="How to run a root cause analysis (5 Whys and fishbone)">
+<meta property="og:description" content="Fix the cause, not the symptom. The 5 Whys and fishbone methods, a worked example, the format to document it, and the mistakes that make it fail.">
+<meta property="og:image" content="https://plenorgroup.com/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to run a root cause analysis (5 Whys and fishbone)">
+<meta name="twitter:description" content="Fix the cause, not the symptom. The 5 Whys and fishbone methods, with a worked example.">
+<meta name="twitter:image" content="https://plenorgroup.com/og-image.jpg">
+
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://plenorgroup.com/insights/root-cause-analysis#post",
+      "headline": "How to run a root cause analysis (5 Whys and fishbone)",
+      "description": "A root cause analysis fixes the cause, not the symptom. How to run one with the 5 Whys and the fishbone diagram, a worked example, the format to document it, and the mistakes that make it fail.",
+      "author": { "@id": "https://plenorgroup.com/about#everton" },
+      "publisher": { "@id": "https://plenorgroup.com/#org" },
+      "datePublished": "2026-06-13",
+      "dateModified": "2026-06-13",
+      "image": "https://plenorgroup.com/og-image.jpg",
+      "mainEntityOfPage": "https://plenorgroup.com/insights/root-cause-analysis",
+      "isPartOf": { "@id": "https://plenorgroup.com/insights#blog" }
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://plenorgroup.com/insights/root-cause-analysis#howto",
+      "name": "How to run a root cause analysis",
+      "description": "A five-step method to find and fix the root cause of an operating problem instead of the symptom.",
+      "step": [
+        { "@type": "HowToStep", "position": 1, "name": "Define the problem precisely", "text": "Write the problem as a measured gap: what changed, by how much, and since when. Vague problems produce vague causes." },
+        { "@type": "HowToStep", "position": 2, "name": "Get to the scene and the data", "text": "Look at where the problem happens and pull the operating data, rather than theorizing from a meeting room." },
+        { "@type": "HowToStep", "position": 3, "name": "Trace the cause chain", "text": "Use the 5 Whys for a single-thread problem or a fishbone diagram for a problem with several contributing causes." },
+        { "@type": "HowToStep", "position": 4, "name": "Verify the root cause", "text": "Confirm the suspected root cause against the evidence. If removing it would not prevent recurrence, it is not the root cause." },
+        { "@type": "HowToStep", "position": 5, "name": "Assign a corrective action with an owner", "text": "Turn the root cause into a specific fix with a named owner and a date, and review it in the operating cadence until it holds." }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://plenorgroup.com/insights/root-cause-analysis#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a root cause analysis?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A root cause analysis (RCA) is a structured method for finding the underlying cause of a problem rather than its visible symptom, so the fix prevents recurrence instead of treating the surface. Common methods include the 5 Whys and the fishbone (Ishikawa) diagram."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the 5 Whys?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The 5 Whys is a root cause method that asks 'why' repeatedly, each answer becoming the next question, until the chain reaches a cause that is a process or system failure rather than a symptom. Five is a guideline, not a rule; stop when removing the cause would prevent recurrence."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a fishbone diagram?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A fishbone or Ishikawa diagram maps the possible causes of a problem into categories (commonly people, process, policy, technology, measurement, and environment) so a team can see several contributing causes at once. It is used when a problem has more than one cause rather than a single chain."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="brand" aria-label="Plenor Group home"><img src="/logo.png" alt="Plenor Group" width="200" height="50"></a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="/method">The Bridge</a>
+      <a href="/engagements">Engagements</a>
+      <a href="/work">Work</a>
+      <a href="/insights" aria-current="page">Insights</a>
+      <a href="/about">About</a>
+      <a href="/contact" class="btn btn-primary">Book a 15-min intro</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Open menu" aria-controls="nav-overlay" aria-expanded="false">Menu</button>
+  </div>
+</header>
+
+<div class="nav-overlay" id="nav-overlay" data-open="false" role="dialog" aria-modal="true" aria-label="Site navigation" aria-hidden="true">
+  <div class="overlay-header">
+    <a href="/" class="brand" aria-label="Plenor Group home"><img src="/logo.png" alt="Plenor Group" width="200" height="50"></a>
+    <button class="nav-toggle" aria-label="Close menu" data-close="true">Close</button>
+  </div>
+  <nav class="nav-stack" aria-label="Mobile">
+    <a href="/method">The Bridge</a>
+    <a href="/engagements">Engagements</a>
+    <a href="/work">Work</a>
+    <a href="/insights" aria-current="page">Insights</a>
+    <a href="/about">About</a>
+    <a href="/contact">Contact</a>
+  </nav>
+  <a href="/contact" class="btn btn-primary nav-cta">Book a 15-min intro</a>
+</div>
+
+<main id="main">
+
+<section class="hero">
+  <div class="container">
+    <p class="eyebrow">Operating notes</p>
+    <h1>How to run a root cause analysis.</h1>
+    <p class="subhead">Most teams fix the symptom and the problem comes back next month. A root cause analysis finds the cause underneath, so the fix actually holds. Here is the method, with the 5 Whys and the fishbone.</p>
+    <p class="lead">11 min read &nbsp;·&nbsp; By Everton Paula</p>
+  </div>
+</section>
+
+<section id="body">
+  <div class="container">
+    <div class="unmeasured" style="max-width: 42rem;">
+      <p>A delivery rate drops. A defect spikes. A queue blows out. The instinct is to do something fast: add people, send a warning, push the team harder. The number recovers for a week, and then the same problem returns, because the thing that caused it was never touched. The team fixed the symptom.</p>
+
+      <p style="margin-block-start: 1.25rem;">A root cause analysis is the discipline of not doing that. It is a structured way to trace a problem down to the cause that, once removed, stops the problem from coming back. It is one of the oldest tools in operations and one of the most misused, because most people run it as a meeting where everyone shares an opinion, rather than as a method with a defined end state. This is how to run it properly.</p>
+
+      <h2 style="margin-block: 2.75rem 1.25rem;">What a root cause analysis actually is</h2>
+
+      <p>A root cause analysis, or RCA, is a method for finding the underlying cause of a problem instead of its visible symptom. The visible symptom is what shows up on the dashboard. The root cause is the process or system failure that produced it. The test for a root cause is simple: if you removed it, would the problem stop recurring? If the answer is no, you have not reached the root cause yet, you have found another symptom on the way down.</p>
+
+      <p style="margin-block-start: 1.25rem;">RCA is not one technique. It is a goal, and there are a few methods to reach it. The two that carry almost all of operations are the 5 Whys and the fishbone diagram. The skill is knowing which one a problem calls for.</p>
+
+      <h2 style="margin-block: 2.75rem 1.25rem;">The 5 Whys</h2>
+
+      <p>The 5 Whys is the method for a problem that runs down a single chain. You state the problem, ask why it happened, and then ask why again of the answer, and again, until you reach a cause that is a process or system failure rather than a person trying harder. Five is a guideline, not a law. Sometimes it is three whys, sometimes seven. You stop when removing the cause would prevent recurrence.</p>
+
+      <p style="margin-block-start: 1.25rem;">Here is a worked example of root cause analysis from a last-mile operation. On-time delivery dropped from 95 percent to 88 percent in a month.</p>
+
+      <ul role="list" style="display: grid; gap: 0.85rem; max-width: 42rem; margin-block-start: 1.25rem;">
+        <li><strong>Why is on-time delivery down?</strong> Couriers are arriving late to pickup.</li>
+        <li><strong>Why are couriers arriving late?</strong> They are waiting at the warehouse because orders are not ready.</li>
+        <li><strong>Why are orders not ready?</strong> The pick-pack team is starting its batches late.</li>
+        <li><strong>Why is pick-pack starting late?</strong> The morning shift now begins 30 minutes after the couriers are scheduled.</li>
+        <li><strong>Why is the shift misaligned?</strong> The shift schedule changed last month, and nobody re-baselined the batch start time against the courier schedule.</li>
+      </ul>
+
+      <p style="margin-block-start: 1.25rem;">The root cause is not lazy couriers or a slow pick-pack team, which is where the first instinct pointed. It is a schedule change made without re-baselining the dependent process. The fix is to re-align the batch start time and add a step to the shift-change procedure that re-checks downstream dependencies. Telling couriers to hurry would have done nothing, which is exactly why the problem kept coming back.</p>
+
+      <div class="pull-quote" style="margin-block-start: 2.5rem;">
+        The test for a root cause: if you removed it, would the problem stop coming back? If not, you are still looking at a symptom.
+      </div>
+
+      <h2 style="margin-block: 2.75rem 1.25rem;">The fishbone (Ishikawa) diagram</h2>
+
+      <p>The 5 Whys breaks down when a problem has more than one cause feeding it at once, because a single chain cannot hold several contributing causes. That is what the fishbone diagram, also called the Ishikawa diagram, is for. You write the problem at the head of the fish, and draw bones for the categories of cause, then fill each with the specific causes the team can find.</p>
+
+      <p style="margin-block-start: 1.25rem;">For operations and service problems, six categories cover most cases:</p>
+
+      <ul role="list" style="display: grid; gap: 0.85rem; max-width: 42rem; margin-block-start: 1.25rem;">
+        <li><strong>People.</strong> Skill, training, staffing, handovers.</li>
+        <li><strong>Process.</strong> The steps, the sequence, the dependencies between them.</li>
+        <li><strong>Policy.</strong> The rules and decisions that constrain how work is done.</li>
+        <li><strong>Technology.</strong> Tools, systems, integrations, and what they do under load.</li>
+        <li><strong>Measurement.</strong> What is tracked, how, and whether the number is even right.</li>
+        <li><strong>Environment.</strong> Demand spikes, seasonality, external conditions.</li>
+      </ul>
+
+      <p style="margin-block-start: 1.25rem;">Use the fishbone when a defect rate or a complaint volume has clearly more than one driver, and you need to see them laid out before deciding which to attack first. Use the 5 Whys when a single number moved and you can feel there is a chain behind it. A lot of strong analyses use both: a fishbone to surface the candidate causes, then a 5 Whys down the one that looks largest.</p>
+
+      <h2 style="margin-block: 2.75rem 1.25rem;">The format: how to write it down</h2>
+
+      <p>An RCA that lives only in someone's head is not an RCA, it is a hunch. The format is short and fixed, one page, and it is what makes the analysis reviewable and the fix accountable. A usable root cause analysis format has six parts:</p>
+
+      <ul role="list" style="display: grid; gap: 0.85rem; max-width: 42rem; margin-block-start: 1.25rem;">
+        <li><strong>Problem statement.</strong> The measured gap: what, how much, since when.</li>
+        <li><strong>Impact.</strong> What the problem costs while it continues.</li>
+        <li><strong>Evidence.</strong> The data and observations the analysis rests on.</li>
+        <li><strong>Root cause.</strong> The cause that passes the recurrence test, with the method used to find it.</li>
+        <li><strong>Corrective action.</strong> The specific fix, with a named owner and a date.</li>
+        <li><strong>Verification.</strong> How and when you will confirm the fix held.</li>
+      </ul>
+
+      <p style="margin-block-start: 1.25rem;">If you want a tool, the 5 Whys and a fishbone both fit on a single sheet of paper or a shared doc. The method matters far more than the software. A root cause analysis tool is whatever lets the team see the chain and agree on it.</p>
+
+      <h2 style="margin-block: 2.75rem 1.25rem;">The corrective action is the point</h2>
+
+      <p>An RCA with no corrective action is an essay. The whole exercise exists to produce a specific fix with an owner and a date, and to verify it held. That last part is where most analyses quietly fail: the fix gets agreed in the room, everyone moves on, and nobody checks in three weeks whether the number actually recovered and stayed recovered. The corrective action has to live somewhere it gets reviewed, which is the <a href="/insights/operating-cadence">weekly and monthly operating cadence</a>. Without a cadence to carry it, even a correct root cause analysis evaporates.</p>
+
+      <p style="margin-block-start: 1.25rem;">In one operation I ran, building a taxonomy that mapped customer complaints to specific root causes, and then attacking the causes rather than the complaint volume, was a meaningful part of cutting a defect rate from 6 percent to 3 percent in six months. The analyses were not complicated. The discipline of running them every week, and verifying the fixes held, was the hard part.</p>
+
+      <h2 style="margin-block: 2.75rem 1.25rem;">The three ways it goes wrong</h2>
+
+      <p><strong>Stopping too early.</strong> The team reaches a cause that is satisfying to blame and stops there, usually one level above the real cause. "The agent made an error" is almost never a root cause. Why was the error possible? Why did the process allow it? Keep going until you reach the system.</p>
+
+      <p style="margin-block-start: 1.25rem;"><strong>Blaming people instead of process.</strong> If the root cause is a name, you have probably stopped too early. People operate inside a process and a set of policies. A good RCA assumes a competent person and asks what in the system let the failure happen. It is more useful and it is more true.</p>
+
+      <p style="margin-block-start: 1.25rem;"><strong>No owner on the corrective action.</strong> A fix that belongs to everyone belongs to no one. Every corrective action needs one name and one date, reviewed until it is closed. Without that, the analysis was a conversation.</p>
+
+      <h2 style="margin-block: 2.75rem 1.25rem;">Why this is operating work</h2>
+
+      <p>Root cause analysis is a Lean Six Sigma staple, and it is one of the first habits I install in an operation, because a team that fixes causes instead of symptoms stops fighting the same fire every month. It is also a small example of the larger job: building the operating disciplines that let a company improve on purpose rather than by luck, and that keep running after the person who installed them moves on.</p>
+
+      <p style="margin-block-start: 1.25rem;">That is the work Plenor does. If your team keeps fixing the same problems and you want an outside operator to read the operation and rank what to fix at the root, the one-week, fixed-fee <a href="/teardown">Operating Teardown</a> is where to start. If you need someone to own the operation while you build it, that is <a href="/fractional-coo">fractional COO</a> work.</p>
+    </div>
+  </div>
+</section>
+
+<section id="next">
+  <div class="container">
+    <div class="eyebrow">Keep reading</div>
+    <h2>Next note.</h2>
+    <div class="card-grid">
+      <a class="card" href="/insights/operating-cadence">
+        <h3>How to install a weekly operating cadence in 30 days</h3>
+        <p>Where corrective actions get reviewed until they hold. The three-meeting week and the 30-day install.</p>
+      </a>
+      <a class="card" href="/insights/vendor-scorecard">
+        <h3>How to build a vendor scorecard</h3>
+        <p>When the root cause is a vendor, this is how you measure and manage them with a number instead of a complaint.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-banner" id="book">
+  <div class="container">
+    <div class="eyebrow">From reading to running</div>
+    <h2>Fixing the same problem every month?</h2>
+    <p>One week, fixed fee, a written teardown that finds what is breaking your operation at the root and ranks the fix sequence.</p>
+    <div class="cta-row">
+      <a href="/teardown" class="btn btn-primary">See the Operating Teardown</a>
+      <a href="/fractional-coo" class="btn btn-secondary">Fractional COO services</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="brand"><img src="/logo.png" alt="Plenor Group" width="200" height="50"></div>
+        <p class="footer-tagline">Operations consulting for growth-stage teams. Tampa, Florida. Available remote and on-site.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Get in touch</h4>
+        <a href="mailto:contact@plenorgroup.com">contact@plenorgroup.com</a>
+      </div>
+      <div class="footer-col">
+        <h4>Tools</h4>
+        <a href="https://everpaula.github.io/marketplace-ops-toolkit/" target="_blank" rel="noopener">Marketplace Ops Toolkit</a>
+        <a href="https://github.com/everpaula" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>&copy; 2026 Plenor Group LLC. All rights reserved.</div>
+      <div>Tampa, FL · USA</div>
+    </div>
+  </div>
+</footer>
+
+<a href="/contact" class="mobile-book-fab" aria-label="Book a 15 minute intro">Book 15 min</a>
+
+<script src="/nav.js" defer></script>
+
+</body>
+</html>

@@ -44,6 +44,7 @@ Everton Paula, 15+ years operating inside marketplaces, fintech, last-mile platf
 - Work (case studies): https://plenorgroup.com/work
 - Insights (operating notes): https://plenorgroup.com/insights
 - What is a fractional COO: https://plenorgroup.com/insights/what-is-a-fractional-coo
+- How to run a root cause analysis (5 Whys, fishbone): https://plenorgroup.com/insights/root-cause-analysis
 - How to build a vendor scorecard: https://plenorgroup.com/insights/vendor-scorecard
 - How to install a weekly operating cadence: https://plenorgroup.com/insights/operating-cadence
 - The one-page operating diagnostic: https://plenorgroup.com/insights/operating-diagnostic
