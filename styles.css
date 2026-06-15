@@ -1264,3 +1264,68 @@ article#case-2 {
 }
 .shot-link:hover .shot-launch,
 .shot-link:focus-visible .shot-launch { background: #a93609; }
+
+/* Two-column hero with Bridge Method visual */
+.hero-2col {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 4rem;
+  align-items: center;
+}
+.hero-text .cta-row { margin-block-start: 0; }
+.bridge-viz {
+  display: grid;
+  gap: 0.7rem;
+  padding: 1.75rem;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+.bridge-end {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.85rem 1.1rem;
+  text-align: center;
+}
+.bridge-end span {
+  display: block;
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--text);
+  line-height: 1.2;
+}
+.bridge-end small { font-size: 0.78rem; color: var(--text-soft); }
+.bridge-bottom { background: var(--accent); border-color: var(--accent); }
+.bridge-bottom span { color: #fff; }
+.bridge-bottom small { color: rgba(255, 255, 255, 0.82); }
+.bridge-label {
+  text-align: center;
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--signal);
+  font-weight: 700;
+}
+.bridge-span { display: grid; gap: 0.45rem; }
+.bridge-phase {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-inline-start: 3px solid var(--accent);
+  border-radius: 6px;
+  padding: 0.6rem 1rem;
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--text);
+}
+@media (max-width: 880px) {
+  .hero-2col { grid-template-columns: 1fr; gap: 2.5rem; }
+  .bridge-viz { max-width: 26rem; }
+}
+@media (forced-colors: active) {
+  .bridge-viz, .bridge-end, .bridge-phase { border: 1px solid CanvasText; }
+  .bridge-bottom { background: CanvasText; }
+}
