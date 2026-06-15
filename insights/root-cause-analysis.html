@@ -167,6 +167,16 @@
         <li><strong>Why is the shift misaligned?</strong> The shift schedule changed last month, and nobody re-baselined the batch start time against the courier schedule.</li>
       </ul>
 
+      <figure class="diagram whys-chain" role="img" aria-label="A 5 Whys chain for the late delivery example. Problem: on-time delivery dropped from 95 to 88 percent. Why: couriers arrive late to pickup. Why: orders are not ready when they arrive. Why: pick-pack starts batches late. Why: the morning shift begins after the couriers are scheduled. Root cause: the shift schedule changed without re-baselining the batch start time.">
+        <div class="whys-step whys-problem"><span class="whys-tag">Problem</span>On-time delivery dropped from 95% to 88%</div>
+        <div class="whys-step"><span class="whys-tag">Why?</span>Couriers are arriving late to pickup</div>
+        <div class="whys-step"><span class="whys-tag">Why?</span>Orders are not ready when couriers arrive</div>
+        <div class="whys-step"><span class="whys-tag">Why?</span>The pick-pack team is starting its batches late</div>
+        <div class="whys-step"><span class="whys-tag">Why?</span>The morning shift begins after the couriers are scheduled</div>
+        <div class="whys-step whys-root"><span class="whys-tag">Root cause</span>The shift schedule changed without re-baselining the batch start time</div>
+        <figcaption>The 5 Whys traces a single chain from the visible symptom down to the root cause.</figcaption>
+      </figure>
+
       <p style="margin-block-start: 1.25rem;">The root cause is not lazy couriers or a slow pick-pack team, which is where the first instinct pointed. It is a schedule change made without re-baselining the dependent process. The fix is to re-align the batch start time and add a step to the shift-change procedure that re-checks downstream dependencies. Telling couriers to hurry would have done nothing, which is exactly why the problem kept coming back.</p>
 
       <div class="pull-quote" style="margin-block-start: 2.5rem;">
@@ -187,6 +197,21 @@
         <li><strong>Measurement.</strong> What is tracked, how, and whether the number is even right.</li>
         <li><strong>Environment.</strong> Demand spikes, seasonality, external conditions.</li>
       </ul>
+
+      <figure class="diagram fishbone" role="img" aria-label="A fishbone or Ishikawa diagram. Six cause categories feed into the problem at the head: people, process, and policy above the spine; technology, measurement, and environment below it.">
+        <div class="fishbone-cats fishbone-top">
+          <div class="fishbone-cat"><strong>People</strong><span>skill, training, staffing, handovers</span></div>
+          <div class="fishbone-cat"><strong>Process</strong><span>steps, sequence, dependencies</span></div>
+          <div class="fishbone-cat"><strong>Policy</strong><span>rules and decisions</span></div>
+        </div>
+        <div class="fishbone-spine"><span class="fishbone-line"></span><span class="fishbone-head">Problem</span></div>
+        <div class="fishbone-cats fishbone-bottom">
+          <div class="fishbone-cat"><strong>Technology</strong><span>tools, systems, behavior under load</span></div>
+          <div class="fishbone-cat"><strong>Measurement</strong><span>what is tracked, and is it right</span></div>
+          <div class="fishbone-cat"><strong>Environment</strong><span>demand spikes, seasonality</span></div>
+        </div>
+        <figcaption>A fishbone diagram surfaces several contributing causes at once, grouped by category, when a problem is not a single chain.</figcaption>
+      </figure>
 
       <p style="margin-block-start: 1.25rem;">Use the fishbone when a defect rate or a complaint volume has clearly more than one driver, and you need to see them laid out before deciding which to attack first. Use the 5 Whys when a single number moved and you can feel there is a chain behind it. A lot of strong analyses use both: a fishbone to surface the candidate causes, then a 5 Whys down the one that looks largest.</p>
 

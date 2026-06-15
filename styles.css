@@ -987,3 +987,140 @@ article#case-2 {
   }
   .timeline-phase:last-child { border-bottom: none; }
 }
+
+/* Article diagrams */
+.diagram {
+  margin-block: 2.5rem;
+  padding: 1.75rem 1.5rem;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+.diagram figcaption {
+  margin-block-start: 1.5rem;
+  font-size: 0.85rem;
+  color: var(--text-soft);
+  line-height: 1.45;
+  text-align: center;
+  max-width: none;
+}
+
+/* 5 Whys chain */
+.whys-chain { display: flex; flex-direction: column; }
+.whys-step {
+  position: relative;
+  width: 100%;
+  max-width: 36rem;
+  margin-inline: auto;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-inline-start: 3px solid var(--accent);
+  border-radius: 6px;
+  padding: 0.85rem 1.1rem;
+  font-size: 0.98rem;
+  line-height: 1.4;
+  color: var(--text);
+}
+.whys-step + .whys-step { margin-block-start: 1.9rem; }
+.whys-step + .whys-step::before {
+  content: "";
+  position: absolute;
+  top: -1.55rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 1.55rem;
+  background: var(--border);
+}
+.whys-step + .whys-step::after {
+  content: "\25BC";
+  position: absolute;
+  top: -1.35rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.66rem;
+  line-height: 1;
+  color: var(--signal);
+}
+.whys-tag {
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--signal);
+  margin-inline-end: 0.5rem;
+}
+.whys-step.whys-problem { border-inline-start-color: var(--text); }
+.whys-problem .whys-tag { color: var(--text); }
+.whys-step.whys-root { border-inline-start-color: var(--signal); background: #fbf3ee; }
+.whys-root .whys-tag { color: var(--signal); }
+
+/* Fishbone (Ishikawa) cause map */
+.fishbone-cats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.9rem;
+}
+.fishbone-cat {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.8rem 0.9rem;
+  text-align: center;
+}
+.fishbone-cat strong {
+  display: block;
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--accent);
+  margin-block-end: 0.2rem;
+}
+.fishbone-cat span {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--text-soft);
+  line-height: 1.35;
+}
+.fishbone-spine {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-block: 1.1rem;
+}
+.fishbone-line {
+  flex: 1;
+  height: 3px;
+  background: var(--accent);
+  position: relative;
+}
+.fishbone-line::after {
+  content: "";
+  position: absolute;
+  right: -1px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-block: 6px solid transparent;
+  border-inline-start: 10px solid var(--accent);
+}
+.fishbone-head {
+  background: var(--accent);
+  color: #fff;
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.02rem;
+  padding: 0.65rem 1.4rem;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .fishbone-cats { grid-template-columns: 1fr; }
+  .fishbone-head { font-size: 0.92rem; padding: 0.6rem 1rem; }
+}
+
+@media (forced-colors: active) {
+  .diagram, .whys-step, .fishbone-cat { border: 1px solid CanvasText; }
+  .fishbone-line, .fishbone-head { background: CanvasText; }
+}
