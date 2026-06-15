@@ -159,6 +159,25 @@
 
       <p style="margin-block-start: 1.25rem;">Back to the example. If shrinkage is 30 percent, an agent paid for 40 hours is available for 28. Now the math is 1,333 hours of work divided by 28 productive hours, which is about 48 agents, not 33. The 15-agent gap between the naive number and the real one is the difference between holding the service level and drowning under it. A plan that ignores shrinkage is not a conservative plan, it is a wrong one.</p>
 
+      <figure class="diagram" role="img" aria-label="A capacity calculation. Of a 40-hour paid week, 28 hours are productive and 12 hours, or 30 percent, are shrinkage. 10,000 contacts at 8 minutes each is 1,333 hours of work, divided by 28 productive hours per agent, equals 48 agents needed.">
+        <div class="shrink-bar">
+          <div class="shrink-prod" style="flex: 70;">Productive 28h</div>
+          <div class="shrink-loss" style="flex: 30;">Shrinkage 12h</div>
+        </div>
+        <div class="calc-flow">
+          <div class="calc-box"><b>10,000</b><span>contacts/wk</span></div>
+          <div class="calc-op">&times;</div>
+          <div class="calc-box"><b>8 min</b><span>handle time</span></div>
+          <div class="calc-op">=</div>
+          <div class="calc-box"><b>1,333h</b><span>work/wk</span></div>
+          <div class="calc-op">&divide;</div>
+          <div class="calc-box"><b>28h</b><span>productive/agent</span></div>
+          <div class="calc-op">=</div>
+          <div class="calc-box calc-result"><b>48</b><span>agents</span></div>
+        </div>
+        <figcaption>Paid hours are not productive hours. Subtracting 30 percent shrinkage turns the naive 33-agent answer into the real 48.</figcaption>
+      </figure>
+
       <div class="pull-quote" style="margin-block-start: 2.5rem;">
         Paid hours are not productive hours. The 30 percent you forget to subtract is the exact amount by which you will be understaffed.
       </div>
@@ -174,6 +193,11 @@
       <p>A single number is not a staffing model. A staffing model is the calculation run across periods, so you can see where demand peaks, where the plan is short, and where you are carrying slack. It is what turns capacity planning into headcount planning: the hiring you approve this quarter should come out of the gap the model shows between demand and current capacity over the next two or three quarters, not out of how the queue felt last week.</p>
 
       <p style="margin-block-start: 1.25rem;">You can build a first version in a spreadsheet, and you should, because building it teaches you which inputs your operation is missing. If you want a running start, the free <a href="https://everpaula.github.io/marketplace-ops-toolkit/workforce-forecast.html" target="_blank" rel="noopener">workforce forecast tool</a> in the Marketplace Ops Toolkit models demand, handle time, and shrinkage into a staffing number in your browser, with no signup.</p>
+
+      <figure class="figure-shot">
+        <img src="/img/workforce-forecast-tool.jpg" width="1000" height="1276" loading="lazy" alt="The workforce forecast tool in the Marketplace Ops Toolkit: case types with daily volume and average handle time, operating parameters including productive hours per agent and shrinkage, and a required headcount result.">
+        <figcaption>The free workforce forecast tool: enter volume, handle time, and shrinkage, and it returns the required headcount. <a href="https://everpaula.github.io/marketplace-ops-toolkit/workforce-forecast.html" target="_blank" rel="noopener">Open the tool &rarr;</a></figcaption>
+      </figure>
 
       <h2 style="margin-block: 2.75rem 1.25rem;">The three ways it goes wrong</h2>
 
