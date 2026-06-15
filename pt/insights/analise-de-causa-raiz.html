@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Como fazer uma análise de causa raiz (5 Porquês e Ishikawa) · Plenor Group</title>
+<meta name="description" content="Uma análise de causa raiz corrige a causa, não o sintoma. Como fazer com os 5 Porquês e o diagrama de Ishikawa, um exemplo prático, o formato para documentar e os erros que fazem falhar.">
+<link rel="canonical" href="https://plenorgroup.com/pt/insights/analise-de-causa-raiz">
+
+<link rel="alternate" hreflang="en" href="https://plenorgroup.com/insights/root-cause-analysis">
+<link rel="alternate" hreflang="pt-BR" href="https://plenorgroup.com/pt/insights/analise-de-causa-raiz">
+<link rel="alternate" hreflang="x-default" href="https://plenorgroup.com/insights/root-cause-analysis">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://plenorgroup.com/pt/insights/analise-de-causa-raiz">
+<meta property="og:title" content="Como fazer uma análise de causa raiz (5 Porquês e Ishikawa)">
+<meta property="og:description" content="Corrija a causa, não o sintoma. Os métodos dos 5 Porquês e de Ishikawa, com um exemplo prático e o formato para documentar.">
+<meta property="og:image" content="https://plenorgroup.com/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Como fazer uma análise de causa raiz (5 Porquês e Ishikawa)">
+<meta name="twitter:description" content="Corrija a causa, não o sintoma. Os métodos dos 5 Porquês e de Ishikawa, com um exemplo prático.">
+<meta name="twitter:image" content="https://plenorgroup.com/og-image.jpg">
+
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://plenorgroup.com/pt/insights/analise-de-causa-raiz#post",
+      "headline": "Como fazer uma análise de causa raiz (5 Porquês e Ishikawa)",
+      "description": "Uma análise de causa raiz corrige a causa, não o sintoma. Como fazer com os 5 Porquês e o diagrama de Ishikawa, um exemplo prático, o formato para documentar e os erros que fazem falhar.",
+      "inLanguage": "pt-BR",
+      "author": { "@id": "https://plenorgroup.com/about#everton" },
+      "publisher": { "@id": "https://plenorgroup.com/#org" },
+      "datePublished": "2026-06-14",
+      "dateModified": "2026-06-14",
+      "image": "https://plenorgroup.com/og-image.jpg",
+      "mainEntityOfPage": "https://plenorgroup.com/pt/insights/analise-de-causa-raiz"
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://plenorgroup.com/pt/insights/analise-de-causa-raiz#howto",
+      "name": "Como fazer uma análise de causa raiz",
+      "inLanguage": "pt-BR",
+      "description": "Um método de cinco passos para encontrar e corrigir a causa raiz de um problema operacional, em vez do sintoma.",
+      "step": [
+        { "@type": "HowToStep", "position": 1, "name": "Defina o problema com precisão", "text": "Escreva o problema como uma lacuna medida: o que mudou, em quanto e desde quando. Problemas vagos produzem causas vagas." },
+        { "@type": "HowToStep", "position": 2, "name": "Vá até onde acontece e aos dados", "text": "Observe onde o problema ocorre e puxe os dados operacionais, em vez de teorizar a partir de uma sala de reunião." },
+        { "@type": "HowToStep", "position": 3, "name": "Trace a cadeia de causas", "text": "Use os 5 Porquês para um problema de fio único, ou um diagrama de Ishikawa para um problema com várias causas contribuintes." },
+        { "@type": "HowToStep", "position": 4, "name": "Verifique a causa raiz", "text": "Confirme a causa suspeita contra a evidência. Se removê-la não impediria a recorrência, não é a causa raiz." },
+        { "@type": "HowToStep", "position": 5, "name": "Defina uma ação corretiva com dono", "text": "Transforme a causa raiz em uma correção específica, com um dono nomeado e uma data, e revise-a na cadência operacional até que se sustente." }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://plenorgroup.com/pt/insights/analise-de-causa-raiz#faq",
+      "inLanguage": "pt-BR",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "O que é uma análise de causa raiz?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Uma análise de causa raiz é um método estruturado para encontrar a causa de fundo de um problema em vez do sintoma visível, de modo que a correção impeça a recorrência em vez de tratar a superfície. Os métodos mais comuns são os 5 Porquês e o diagrama de Ishikawa (espinha de peixe)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "O que são os 5 Porquês?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Os 5 Porquês são um método de causa raiz que pergunta 'por quê' repetidamente, cada resposta virando a próxima pergunta, até a cadeia chegar a uma causa que é uma falha de processo ou de sistema, não um sintoma. Cinco é uma referência, não uma regra: pare quando remover a causa impediria a recorrência."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "O que é um diagrama de Ishikawa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Um diagrama de Ishikawa, ou espinha de peixe, organiza as possíveis causas de um problema em categorias (em geral pessoas, processo, política, tecnologia, medição e ambiente) para que um time veja várias causas contribuintes de uma vez. É usado quando um problema tem mais de uma causa, em vez de uma cadeia única."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="brand" aria-label="Plenor Group home"><img src="/logo.png" alt="Plenor Group" width="200" height="50"></a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="/method">The Bridge</a>
+      <a href="/engagements">Engagements</a>
+      <a href="/work">Work</a>
+      <a href="/insights">Insights</a>
+      <a href="/about">About</a>
+      <a href="/contact" class="btn btn-primary">Book a 15-min intro</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Abrir menu" aria-controls="nav-overlay" aria-expanded="false">Menu</button>
+  </div>
+</header>
+
+<div class="nav-overlay" id="nav-overlay" data-open="false" role="dialog" aria-modal="true" aria-label="Navegação do site" aria-hidden="true">
+  <div class="overlay-header">
+    <a href="/" class="brand" aria-label="Plenor Group home"><img src="/logo.png" alt="Plenor Group" width="200" height="50"></a>
+    <button class="nav-toggle" aria-label="Fechar menu" data-close="true">Fechar</button>
+  </div>
+  <nav class="nav-stack" aria-label="Mobile">
+    <a href="/method">The Bridge</a>
+    <a href="/engagements">Engagements</a>
+    <a href="/work">Work</a>
+    <a href="/insights">Insights</a>
+    <a href="/about">About</a>
+    <a href="/contact">Contact</a>
+  </nav>
+  <a href="/contact" class="btn btn-primary nav-cta">Book a 15-min intro</a>
+</div>
+
+<main id="main">
+
+<section class="hero">
+  <div class="container">
+    <p class="eyebrow">Notas operacionais</p>
+    <h1>Como fazer uma análise de causa raiz.</h1>
+    <p class="subhead">A maioria dos times corrige o sintoma e o problema volta no mês seguinte. Uma análise de causa raiz encontra a causa de baixo, para que a correção realmente se sustente. Aqui está o método, com os 5 Porquês e a espinha de peixe.</p>
+    <p class="lead">11 min de leitura &nbsp;·&nbsp; Por Everton Paula &nbsp;·&nbsp; <a href="/insights/root-cause-analysis">Read in English &rarr;</a></p>
+  </div>
+</section>
+
+<section id="body">
+  <div class="container">
+    <div class="unmeasured" style="max-width: 42rem;">
+      <p>A taxa de entrega cai. Um defeito dispara. Uma fila estoura. O instinto é fazer algo rápido: colocar gente, mandar um aviso, cobrar mais o time. O número se recupera por uma semana, e então o mesmo problema volta, porque aquilo que o causou nunca foi tocado. O time corrigiu o sintoma.</p>
+
+      <p style="margin-block-start: 1.25rem;">Uma análise de causa raiz é a disciplina de não fazer isso. É uma forma estruturada de rastrear um problema até a causa que, uma vez removida, impede o problema de voltar. É uma das ferramentas mais antigas de operações e uma das mais mal usadas, porque a maioria das pessoas a conduz como uma reunião onde cada um dá uma opinião, em vez de um método com um estado final definido. É assim que se conduz direito.</p>
+
+      <h2 style="margin-block: 2.75rem 1.25rem;">O que é, de fato, uma análise de causa raiz</h2>
+
+      <p>Uma análise de causa raiz é um método para encontrar a causa de fundo de um problema, em vez do sintoma visível. O sintoma visível é o que aparece no painel. A causa raiz é a falha de processo ou de sistema que o produziu. O teste de uma causa raiz é simples: se você a removesse, o problema pararia de se repetir? Se a resposta é não, você ainda não chegou na causa raiz, achou mais um sintoma no caminho para baixo.</p>
+
+      <p style="margin-block-start: 1.25rem;">A análise de causa raiz não é uma técnica única. É um objetivo, e existem alguns métodos para chegar lá. Os dois que carregam quase toda a operação são os 5 Porquês e o diagrama de espinha de peixe. A habilidade está em saber qual deles o problema pede.</p>
+
+      <h2 style="margin-block: 2.75rem 1.25rem;">Os 5 Porquês</h2>
+
+      <p>Os 5 Porquês são o método para um problema que desce por uma cadeia única. Você enuncia o problema, pergunta por que aconteceu, e então pergunta por que de novo da resposta, e de novo, até chegar a uma causa que é uma falha de processo ou de sistema, não uma pessoa se esforçando mais. Cinco é uma referência, não uma lei. Às vezes são três porquês, às vezes sete. Você para quando remover a causa impediria a recorrência.</p>
+
+      <p style="margin-block-start: 1.25rem;">Aqui vai um exemplo prático de análise de causa raiz em uma operação de última milha. A entrega no prazo caiu de 95% para 88% em um mês.</p>
+
+      <ul role="list" style="display: grid; gap: 0.85rem; max-width: 42rem; margin-block-start: 1.25rem;">
+        <li><strong>Por que a entrega no prazo caiu?</strong> Os entregadores estão chegando atrasados para a coleta.</li>
+        <li><strong>Por que estão chegando atrasados?</strong> Estão esperando no centro de distribuição porque os pedidos não estão prontos.</li>
+        <li><strong>Por que os pedidos não estão prontos?</strong> O time de separação está começando os lotes atrasado.</li>
+        <li><strong>Por que a separação começa atrasada?</strong> O turno da manhã agora começa 30 minutos depois do horário dos entregadores.</li>
+        <li><strong>Por que o turno está desalinhado?</strong> A escala mudou no mês passado, e ninguém recalibrou o horário de início dos lotes em relação à escala dos entregadores.</li>
+      </ul>
+
+      <figure class="diagram whys-chain" role="img" aria-label="Uma cadeia de 5 Porquês para o exemplo de entrega atrasada. Problema: a entrega no prazo caiu de 95% para 88%. Por quê: os entregadores chegam atrasados para a coleta. Por quê: os pedidos não estão prontos quando eles chegam. Por quê: a separação começa os lotes atrasado. Por quê: o turno da manhã começa depois do horário dos entregadores. Causa raiz: a escala mudou sem recalibrar o horário de início dos lotes.">
+        <div class="whys-step whys-problem"><span class="whys-tag">Problema</span>A entrega no prazo caiu de 95% para 88%</div>
+        <div class="whys-step"><span class="whys-tag">Por quê?</span>Os entregadores chegam atrasados para a coleta</div>
+        <div class="whys-step"><span class="whys-tag">Por quê?</span>Os pedidos não estão prontos quando eles chegam</div>
+        <div class="whys-step"><span class="whys-tag">Por quê?</span>O time de separação começa os lotes atrasado</div>
+        <div class="whys-step"><span class="whys-tag">Por quê?</span>O turno da manhã começa depois do horário dos entregadores</div>
+        <div class="whys-step whys-root"><span class="whys-tag">Causa raiz</span>A escala mudou sem recalibrar o horário de início dos lotes</div>
+        <figcaption>Os 5 Porquês traçam uma cadeia única, do sintoma visível até a causa raiz.</figcaption>
+      </figure>
+
+      <p style="margin-block-start: 1.25rem;">A causa raiz não é entregador preguiçoso nem time de separação lento, que era para onde o primeiro instinto apontava. É uma mudança de escala feita sem recalibrar o processo dependente. A correção é realinhar o horário de início dos lotes e acrescentar um passo no procedimento de troca de turno que reconfere as dependências seguintes. Mandar os entregadores correrem não teria feito nada, e é justamente por isso que o problema continuava voltando.</p>
+
+      <div class="pull-quote" style="margin-block-start: 2.5rem;">
+        O teste de uma causa raiz: se você a removesse, o problema pararia de voltar? Se não, você ainda está olhando para um sintoma.
+      </div>
+
+      <h2 style="margin-block: 2.75rem 1.25rem;">O diagrama de Ishikawa (espinha de peixe)</h2>
+
+      <p>Os 5 Porquês não dão conta quando um problema tem mais de uma causa o alimentando ao mesmo tempo, porque uma cadeia única não comporta várias causas contribuintes. É para isso que serve o diagrama de espinha de peixe, também chamado de diagrama de Ishikawa. Você escreve o problema na cabeça do peixe e desenha as espinhas para as categorias de causa, depois preenche cada uma com as causas específicas que o time consegue encontrar.</p>
+
+      <p style="margin-block-start: 1.25rem;">Para problemas de operação e de atendimento, seis categorias cobrem a maioria dos casos:</p>
+
+      <ul role="list" style="display: grid; gap: 0.85rem; max-width: 42rem; margin-block-start: 1.25rem;">
+        <li><strong>Pessoas.</strong> Habilidade, treinamento, dimensionamento, trocas de turno.</li>
+        <li><strong>Processo.</strong> As etapas, a sequência, as dependências entre elas.</li>
+        <li><strong>Política.</strong> As regras e decisões que limitam como o trabalho é feito.</li>
+        <li><strong>Tecnologia.</strong> Ferramentas, sistemas, integrações e o que fazem sob carga.</li>
+        <li><strong>Medição.</strong> O que é acompanhado, como, e se o número está sequer certo.</li>
+        <li><strong>Ambiente.</strong> Picos de demanda, sazonalidade, condições externas.</li>
+      </ul>
+
+      <figure class="diagram fishbone" role="img" aria-label="Um diagrama de Ishikawa ou espinha de peixe. Seis categorias de causa alimentam o problema na cabeça: pessoas, processo e política acima da espinha; tecnologia, medição e ambiente abaixo dela.">
+        <div class="fishbone-cats fishbone-top">
+          <div class="fishbone-cat"><strong>Pessoas</strong><span>habilidade, treinamento, trocas de turno</span></div>
+          <div class="fishbone-cat"><strong>Processo</strong><span>etapas, sequência, dependências</span></div>
+          <div class="fishbone-cat"><strong>Política</strong><span>regras e decisões</span></div>
+        </div>
+        <div class="fishbone-spine"><span class="fishbone-line"></span><span class="fishbone-head">Problema</span></div>
+        <div class="fishbone-cats fishbone-bottom">
+          <div class="fishbone-cat"><strong>Tecnologia</strong><span>ferramentas, sistemas, sob carga</span></div>
+          <div class="fishbone-cat"><strong>Medição</strong><span>o que é medido, e se está certo</span></div>
+          <div class="fishbone-cat"><strong>Ambiente</strong><span>picos de demanda, sazonalidade</span></div>
+        </div>
+        <figcaption>A espinha de peixe revela várias causas contribuintes de uma vez, agrupadas por categoria, quando o problema não é uma cadeia única.</figcaption>
+      </figure>
+
+      <p style="margin-block-start: 1.25rem;">Use a espinha de peixe quando um índice de defeito ou um volume de reclamações tem claramente mais de um motivo, e você precisa vê-los lado a lado antes de decidir qual atacar primeiro. Use os 5 Porquês quando um único número se moveu e dá para sentir que há uma cadeia por trás. Muitas análises fortes usam os dois: uma espinha de peixe para revelar as causas candidatas, e então um 5 Porquês descendo pela que parece maior.</p>
+
+      <h2 style="margin-block: 2.75rem 1.25rem;">O formato: como colocar no papel</h2>
+
+      <p>Uma análise de causa raiz que vive só na cabeça de alguém não é uma análise, é um palpite. O formato é curto e fixo, uma página, e é o que torna a análise revisável e a correção cobrável. Um formato útil de análise de causa raiz tem seis partes:</p>
+
+      <ul role="list" style="display: grid; gap: 0.85rem; max-width: 42rem; margin-block-start: 1.25rem;">
+        <li><strong>Enunciado do problema.</strong> A lacuna medida: o quê, quanto, desde quando.</li>
+        <li><strong>Impacto.</strong> Quanto o problema custa enquanto continua.</li>
+        <li><strong>Evidência.</strong> Os dados e observações em que a análise se apoia.</li>
+        <li><strong>Causa raiz.</strong> A causa que passa no teste da recorrência, com o método usado para achá-la.</li>
+        <li><strong>Ação corretiva.</strong> A correção específica, com um dono nomeado e uma data.</li>
+        <li><strong>Verificação.</strong> Como e quando você vai confirmar que a correção se sustentou.</li>
+      </ul>
+
+      <p style="margin-block-start: 1.25rem;">Se você quiser uma ferramenta, tanto os 5 Porquês quanto uma espinha de peixe cabem em uma folha de papel ou em um documento compartilhado. O método importa muito mais que o software. Uma ferramenta de análise de causa raiz é qualquer coisa que deixe o time ver a cadeia e concordar com ela.</p>
+
+      <h2 style="margin-block: 2.75rem 1.25rem;">A ação corretiva é o ponto</h2>
+
+      <p>Uma análise de causa raiz sem ação corretiva é uma redação. O exercício inteiro existe para produzir uma correção específica, com dono e data, e para verificar que se sustentou. É nessa última parte que a maioria das análises falha em silêncio: a correção é acordada na sala, todo mundo segue em frente, e ninguém confere três semanas depois se o número de fato se recuperou e ficou recuperado. A ação corretiva tem que viver em algum lugar onde seja revisada, que é a <a href="/insights/operating-cadence">cadência operacional semanal e mensal</a>. Sem uma cadência para carregá-la, até uma análise de causa raiz correta evapora.</p>
+
+      <p style="margin-block-start: 1.25rem;">Em uma operação que rodei, construir uma taxonomia que mapeava as reclamações de clientes para causas raiz específicas, e então atacar as causas em vez do volume de reclamações, foi parte relevante de reduzir um índice de defeito de 6% para 3% em seis meses. As análises não eram complicadas. A disciplina de rodá-las toda semana, e verificar que as correções se sustentavam, é que era a parte difícil.</p>
+
+      <h2 style="margin-block: 2.75rem 1.25rem;">As três formas de dar errado</h2>
+
+      <p><strong>Parar cedo demais.</strong> O time chega a uma causa que é satisfatória de culpar e para ali, em geral um nível acima da causa real. "O atendente cometeu um erro" quase nunca é uma causa raiz. Por que o erro foi possível? Por que o processo permitiu? Continue até chegar no sistema.</p>
+
+      <p style="margin-block-start: 1.25rem;"><strong>Culpar pessoas em vez do processo.</strong> Se a causa raiz é um nome, você provavelmente parou cedo demais. As pessoas operam dentro de um processo e de um conjunto de políticas. Uma boa análise de causa raiz pressupõe uma pessoa competente e pergunta o que no sistema deixou a falha acontecer. É mais útil e é mais verdadeiro.</p>
+
+      <p style="margin-block-start: 1.25rem;"><strong>Nenhum dono na ação corretiva.</strong> Uma correção que é de todos não é de ninguém. Toda ação corretiva precisa de um nome e uma data, revisada até ser encerrada. Sem isso, a análise foi uma conversa.</p>
+
+      <h2 style="margin-block: 2.75rem 1.25rem;">Por que isso é trabalho de operação</h2>
+
+      <p>A análise de causa raiz é um pilar do Lean Six Sigma, e é um dos primeiros hábitos que instalo em uma operação, porque um time que corrige causas em vez de sintomas para de apagar o mesmo incêndio todo mês. É também um exemplo pequeno do trabalho maior: construir as disciplinas operacionais que deixam uma empresa melhorar de propósito, e não por sorte, e que seguem rodando depois que a pessoa que as instalou sai.</p>
+
+      <p style="margin-block-start: 1.25rem;">É esse o trabalho que a Plenor faz. Se o seu time fica corrigindo os mesmos problemas e você quer um operador de fora para ler a operação e ranquear o que corrigir na raiz, o <a href="/teardown">Operating Teardown</a> de uma semana e preço fixo é por onde começar. Se você precisa de alguém para conduzir a operação enquanto você a constrói, isso é trabalho de <a href="/fractional-coo">COO fracionado</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section id="next">
+  <div class="container">
+    <div class="eyebrow">Continue lendo</div>
+    <h2>Próxima nota.</h2>
+    <div class="card-grid">
+      <a class="card" href="/insights/operating-cadence">
+        <h3>Como instalar uma cadência operacional semanal em 30 dias</h3>
+        <p>Onde as ações corretivas são revisadas até se sustentarem. A semana de três reuniões e a instalação em 30 dias. (em inglês)</p>
+      </a>
+      <a class="card" href="/insights">
+        <h3>Todas as notas operacionais</h3>
+        <p>Voltar para a lista completa de notas sobre o trabalho entre o deck de estratégia e um time rodando. (em inglês)</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-banner" id="book">
+  <div class="container">
+    <div class="eyebrow">Da leitura à operação</div>
+    <h2>Corrigindo o mesmo problema todo mês?</h2>
+    <p>Uma semana, preço fixo, um teardown escrito que encontra o que está quebrando a sua operação na raiz e ranqueia a sequência de correção.</p>
+    <div class="cta-row">
+      <a href="/teardown" class="btn btn-primary">Conheça o Operating Teardown</a>
+      <a href="/fractional-coo" class="btn btn-secondary">Serviços de COO fracionado</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="brand"><img src="/logo.png" alt="Plenor Group" width="200" height="50"></div>
+        <p class="footer-tagline">Consultoria de operações para times em crescimento. Tampa, Flórida. Disponível remoto e presencial.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <a href="mailto:contact@plenorgroup.com">contact@plenorgroup.com</a>
+      </div>
+      <div class="footer-col">
+        <h4>Ferramentas</h4>
+        <a href="https://everpaula.github.io/marketplace-ops-toolkit/" target="_blank" rel="noopener">Marketplace Ops Toolkit</a>
+        <a href="https://github.com/everpaula" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>&copy; 2026 Plenor Group LLC. Todos os direitos reservados.</div>
+      <div>Tampa, FL · EUA</div>
+    </div>
+  </div>
+</footer>
+
+<a href="/contact" class="mobile-book-fab" aria-label="Agendar conversa de 15 minutos">Agendar 15 min</a>
+
+<script src="/nav.js" defer></script>
+
+</body>
+</html>

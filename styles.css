@@ -1238,3 +1238,29 @@ article#case-2 {
   .figure-shot img, .scorecard-demo, .calc-box, .onepage-block, .shrink-bar { border: 1px solid CanvasText; }
   .shrink-prod { background: CanvasText; }
 }
+
+/* Click-to-launch tool screenshot */
+.shot-link { position: relative; display: block; }
+.shot-link img { transition: filter 180ms ease; }
+.shot-link:hover img,
+.shot-link:focus-visible img { filter: brightness(0.93); }
+.shot-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 10px; }
+.shot-launch {
+  position: absolute;
+  inset-block-end: 0.9rem;
+  inset-inline-end: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.5rem 0.9rem;
+  background: var(--signal);
+  color: #fff;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 999px;
+  box-shadow: 0 4px 14px rgba(14, 17, 22, 0.25);
+  transition: background-color 180ms ease;
+}
+.shot-link:hover .shot-launch,
+.shot-link:focus-visible .shot-launch { background: #a93609; }
