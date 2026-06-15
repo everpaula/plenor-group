@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Capacity planning: how to staff an operation to demand · Plenor Group</title>
+<meta name="description" content="Capacity planning matches staffing to demand. The inputs, the core formula, why shrinkage breaks most plans, call center staffing specifics, and a free tool to model it.">
+<link rel="canonical" href="https://plenorgroup.com/insights/capacity-planning">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://plenorgroup.com/insights/capacity-planning">
+<meta property="og:title" content="Capacity planning: how to staff an operation to demand">
+<meta property="og:description" content="The inputs, the core formula, why shrinkage breaks most plans, call center staffing specifics, and a free tool to model it.">
+<meta property="og:image" content="https://plenorgroup.com/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Capacity planning: how to staff an operation to demand">
+<meta name="twitter:description" content="The inputs, the core formula, and why shrinkage breaks most plans.">
+<meta name="twitter:image" content="https://plenorgroup.com/og-image.jpg">
+
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://plenorgroup.com/insights/capacity-planning#post",
+      "headline": "Capacity planning: how to staff an operation to demand",
+      "description": "Capacity planning matches staffing to demand. The inputs, the core formula, why shrinkage breaks most plans, call center staffing specifics, and a free tool to model it.",
+      "author": { "@id": "https://plenorgroup.com/about#everton" },
+      "publisher": { "@id": "https://plenorgroup.com/#org" },
+      "datePublished": "2026-06-14",
+      "dateModified": "2026-06-14",
+      "image": "https://plenorgroup.com/og-image.jpg",
+      "mainEntityOfPage": "https://plenorgroup.com/insights/capacity-planning",
+      "isPartOf": { "@id": "https://plenorgroup.com/insights#blog" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://plenorgroup.com/insights/capacity-planning#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is capacity planning?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Capacity planning is the work of matching staffing to forecast demand so an operation can hit its service level without overspending on idle headcount. It takes a demand forecast, the time each unit of work takes, and the productive time per person, and turns them into how many people the operation needs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is shrinkage in workforce planning?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Shrinkage is the gap between the hours a person is paid for and the hours they are actually available to do the core work. It covers breaks, training, meetings, admin, and absence, and it commonly runs 25 to 35 percent. A capacity plan that ignores shrinkage will understaff the operation every time."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you calculate call center staffing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Start from forecast contact volume and average handle time to get total work hours, then divide by the productive hours per agent after shrinkage. For interaction-based work where contacts queue, an Erlang model adjusts the number up to hold a target service level, because agents cannot be productive 100 percent of the time without wait times rising."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="brand" aria-label="Plenor Group home"><img src="/logo.png" alt="Plenor Group" width="200" height="50"></a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="/method">The Bridge</a>
+      <a href="/engagements">Engagements</a>
+      <a href="/work">Work</a>
+      <a href="/insights" aria-current="page">Insights</a>
+      <a href="/about">About</a>
+      <a href="/contact" class="btn btn-primary">Book a 15-min intro</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Open menu" aria-controls="nav-overlay" aria-expanded="false">Menu</button>
+  </div>
+</header>
+
+<div class="nav-overlay" id="nav-overlay" data-open="false" role="dialog" aria-modal="true" aria-label="Site navigation" aria-hidden="true">
+  <div class="overlay-header">
+    <a href="/" class="brand" aria-label="Plenor Group home"><img src="/logo.png" alt="Plenor Group" width="200" height="50"></a>
+    <button class="nav-toggle" aria-label="Close menu" data-close="true">Close</button>
+  </div>
+  <nav class="nav-stack" aria-label="Mobile">
+    <a href="/method">The Bridge</a>
+    <a href="/engagements">Engagements</a>
+    <a href="/work">Work</a>
+    <a href="/insights" aria-current="page">Insights</a>
+    <a href="/about">About</a>
+    <a href="/contact">Contact</a>
+  </nav>
+  <a href="/contact" class="btn btn-primary nav-cta">Book a 15-min intro</a>
+</div>
+
+<main id="main">
+
+<section class="hero">
+  <div class="container">
+    <p class="eyebrow">Operating notes</p>
+    <h1>Capacity planning: how to staff an operation to demand.</h1>
+    <p class="subhead">Staff too lean and the service level collapses. Staff too rich and you burn the budget on idle hours. Capacity planning is how you find the line, and hold it as demand moves.</p>
+    <p class="lead">10 min read &nbsp;·&nbsp; By Everton Paula</p>
+  </div>
+</section>
+
+<section id="body">
+  <div class="container">
+    <div class="unmeasured" style="max-width: 42rem;">
+      <p>Most staffing decisions in a growing company are made by feel. The queue looks bad, so a manager asks for three more people. The budget looks tight, so finance freezes a backfill. Neither decision is wrong on purpose, and both are guesses, because nobody has connected the number of people to the amount of work in a way you can defend.</p>
+
+      <p style="margin-block-start: 1.25rem;">Capacity planning is that connection. It takes how much work is coming, how long each piece takes, and how much of a person's paid time is actually available, and turns them into a number of people. Done well, it ends the monthly argument about headcount, because the staffing level stops being an opinion and becomes a calculation everyone can see.</p>
+
+      <h2 style="margin-block: 2.75rem 1.25rem;">What capacity planning is</h2>
+
+      <p>Capacity planning is matching staffing to forecast demand so the operation hits its service level without paying for idle headcount. It applies anywhere work arrives and people process it: a support queue, a warehouse, a claims team, a moderation desk, a courier dispatch floor. The vocabulary changes by function, the math does not.</p>
+
+      <p style="margin-block-start: 1.25rem;">A capacity plan needs four inputs, and the quality of the plan is capped by the weakest of them.</p>
+
+      <ul role="list" style="display: grid; gap: 0.85rem; max-width: 42rem; margin-block-start: 1.25rem;">
+        <li><strong>Demand forecast.</strong> How much work is coming, by period. Contacts per week, orders per day, claims per shift. This is the input most teams get wrong, usually by planning to the average instead of the peak.</li>
+        <li><strong>Handle time.</strong> How long one unit of work takes, on average. The average hides a lot, but it is the starting point.</li>
+        <li><strong>Available time per person.</strong> The hours a person can actually spend on the core work, after everything else their paid day contains.</li>
+        <li><strong>Target service level.</strong> The standard you are staffing to hold. Answer 80 percent of contacts within 30 seconds, ship 99 percent of orders same day. Without a target, there is no right answer to how many people you need.</li>
+      </ul>
+
+      <h2 style="margin-block: 2.75rem 1.25rem;">The core calculation</h2>
+
+      <p>The base of every capacity model is the same. Total work equals demand times handle time. People needed equals total work divided by available time per person. Everything else is refinement on top of those two lines.</p>
+
+      <p style="margin-block-start: 1.25rem;">A worked example. A support team takes 10,000 contacts a week, and the average handle time is 8 minutes. That is 80,000 minutes of work, or about 1,333 hours a week. If an agent is paid for 40 hours a week, it is tempting to divide 1,333 by 40 and conclude you need 33 agents. That number is wrong, and the operation that staffs to it will miss its service level every week. The reason is shrinkage.</p>
+
+      <h2 style="margin-block: 2.75rem 1.25rem;">Shrinkage: the input that breaks most plans</h2>
+
+      <p>Shrinkage is the gap between the hours a person is paid for and the hours they are available to do the core work. Breaks, team meetings, training, one-on-ones, system downtime, admin, and absence all live in that gap. In most operations shrinkage runs 25 to 35 percent, and it is the single most common reason a capacity plan understaffs.</p>
+
+      <p style="margin-block-start: 1.25rem;">Back to the example. If shrinkage is 30 percent, an agent paid for 40 hours is available for 28. Now the math is 1,333 hours of work divided by 28 productive hours, which is about 48 agents, not 33. The 15-agent gap between the naive number and the real one is the difference between holding the service level and drowning under it. A plan that ignores shrinkage is not a conservative plan, it is a wrong one.</p>
+
+      <div class="pull-quote" style="margin-block-start: 2.5rem;">
+        Paid hours are not productive hours. The 30 percent you forget to subtract is the exact amount by which you will be understaffed.
+      </div>
+
+      <h2 style="margin-block: 2.75rem 1.25rem;">Call center staffing has one more wrinkle</h2>
+
+      <p>For work that queues in real time, such as calls and live chats, you cannot simply divide work by available hours, because contacts do not arrive in a tidy stream. They cluster, and while agents handle one contact, others wait. To hold a target answer time, an interaction operation has to staff above the raw workload number, leaving deliberate slack so the queue does not build during clusters.</p>
+
+      <p style="margin-block-start: 1.25rem;">This is what an Erlang model captures, and it is why call center staffing tools exist. The practical takeaway without the math: the higher your target service level, the more slack you have to staff, and the relationship is not linear. Going from answering 70 percent of calls in 30 seconds to 90 percent costs far more than the 20-point gap suggests. That curve is a budget conversation worth having before you promise a service level.</p>
+
+      <h2 style="margin-block: 2.75rem 1.25rem;">From calculation to staffing model</h2>
+
+      <p>A single number is not a staffing model. A staffing model is the calculation run across periods, so you can see where demand peaks, where the plan is short, and where you are carrying slack. It is what turns capacity planning into headcount planning: the hiring you approve this quarter should come out of the gap the model shows between demand and current capacity over the next two or three quarters, not out of how the queue felt last week.</p>
+
+      <p style="margin-block-start: 1.25rem;">You can build a first version in a spreadsheet, and you should, because building it teaches you which inputs your operation is missing. If you want a running start, the free <a href="https://everpaula.github.io/marketplace-ops-toolkit/workforce-forecast.html" target="_blank" rel="noopener">workforce forecast tool</a> in the Marketplace Ops Toolkit models demand, handle time, and shrinkage into a staffing number in your browser, with no signup.</p>
+
+      <h2 style="margin-block: 2.75rem 1.25rem;">The three ways it goes wrong</h2>
+
+      <p><strong>Planning to the average.</strong> Demand is not flat. If you staff to the weekly average, you are overstaffed in the troughs and underwater in the peaks, and customers only experience the peaks. Plan to the shape of demand, not its mean.</p>
+
+      <p style="margin-block-start: 1.25rem;"><strong>Forgetting shrinkage.</strong> Covered above, and worth repeating because it is that common. Paid hours are not productive hours. Subtract the gap before you divide.</p>
+
+      <p style="margin-block-start: 1.25rem;"><strong>Treating it as a one-time exercise.</strong> A capacity plan is not a document, it is a model you re-run as demand and handle time move. The plan you built in January is wrong by March if nobody updated the forecast. It belongs in the operating cadence, reviewed monthly, not filed after the budget is set.</p>
+
+      <h2 style="margin-block: 2.75rem 1.25rem;">Why this is operating work</h2>
+
+      <p>Capacity planning is where a lot of operating pain is quietly decided. A team that is always behind is often not a team with a performance problem, it is a team that was staffed to the wrong number and is being asked to make up the gap with effort. Building the model that gets the number right, and reviewing it in the <a href="/insights/operating-cadence">operating cadence</a> as demand moves, is one of the systems that lets a company grow without the operation breaking under it.</p>
+
+      <p style="margin-block-start: 1.25rem;">That is the work Plenor does. If your operation is staffed by feel and you want an outside operator to read it and rank what to fix first, the one-week, fixed-fee <a href="/teardown">Operating Teardown</a> is where to start. If you need someone to own the operation while you build it, that is <a href="/fractional-coo">fractional COO</a> work.</p>
+    </div>
+  </div>
+</section>
+
+<section id="next">
+  <div class="container">
+    <div class="eyebrow">Keep reading</div>
+    <h2>Next note.</h2>
+    <div class="card-grid">
+      <a class="card" href="/insights/operating-cadence">
+        <h3>How to install a weekly operating cadence in 30 days</h3>
+        <p>Where the capacity model gets reviewed and re-forecast as demand moves. The three-meeting week and the 30-day install.</p>
+      </a>
+      <a class="card" href="/insights/root-cause-analysis">
+        <h3>How to run a root cause analysis</h3>
+        <p>When a team is always behind, capacity is often the root cause. The 5 Whys and fishbone methods, with a worked example.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-banner" id="book">
+  <div class="container">
+    <div class="eyebrow">From reading to running</div>
+    <h2>Staffed by feel instead of by model?</h2>
+    <p>One week, fixed fee, a written teardown that reads your operation and ranks what to fix first, capacity included.</p>
+    <div class="cta-row">
+      <a href="/teardown" class="btn btn-primary">See the Operating Teardown</a>
+      <a href="/fractional-coo" class="btn btn-secondary">Fractional COO services</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="brand"><img src="/logo.png" alt="Plenor Group" width="200" height="50"></div>
+        <p class="footer-tagline">Operations consulting for growth-stage teams. Tampa, Florida. Available remote and on-site.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Get in touch</h4>
+        <a href="mailto:contact@plenorgroup.com">contact@plenorgroup.com</a>
+      </div>
+      <div class="footer-col">
+        <h4>Tools</h4>
+        <a href="https://everpaula.github.io/marketplace-ops-toolkit/" target="_blank" rel="noopener">Marketplace Ops Toolkit</a>
+        <a href="https://github.com/everpaula" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>&copy; 2026 Plenor Group LLC. All rights reserved.</div>
+      <div>Tampa, FL · USA</div>
+    </div>
+  </div>
+</footer>
+
+<a href="/contact" class="mobile-book-fab" aria-label="Book a 15 minute intro">Book 15 min</a>
+
+<script src="/nav.js" defer></script>
+
+</body>
+</html>
