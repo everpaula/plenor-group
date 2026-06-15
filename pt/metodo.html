@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O Método Bridge · Da estratégia à operação rodando em 90 dias</title>
+<meta name="description" content="Como a Plenor transforma uma estratégia aprovada pelo board em uma operação que roda. Quatro fases: Diagnóstico, Desenho, Montagem, Transferência.">
+<link rel="canonical" href="https://plenorgroup.com/pt/metodo">
+
+<link rel="alternate" hreflang="en" href="https://plenorgroup.com/method">
+<link rel="alternate" hreflang="pt-BR" href="https://plenorgroup.com/pt/metodo">
+<link rel="alternate" hreflang="x-default" href="https://plenorgroup.com/method">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://plenorgroup.com/pt/metodo">
+<meta property="og:title" content="O Método Bridge · Da estratégia à operação rodando em 90 dias">
+<meta property="og:description" content="Como a Plenor transforma uma estratégia aprovada pelo board em uma operação que roda. Quatro fases: Diagnóstico, Desenho, Montagem, Transferência.">
+<meta property="og:image" content="https://plenorgroup.com/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="O Método Bridge · Da estratégia à operação rodando em 90 dias">
+<meta name="twitter:description" content="Quatro fases: Diagnóstico, Desenho, Montagem, Transferência.">
+<meta name="twitter:image" content="https://plenorgroup.com/og-image.jpg">
+
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://plenorgroup.com/pt/metodo#article",
+      "headline": "O Método Bridge",
+      "inLanguage": "pt-BR",
+      "description": "Um engajamento operacional de quatro fases que leva uma estratégia aprovada pelo board do slide ao sistema rodando em 90 a 180 dias.",
+      "author": { "@id": "https://plenorgroup.com/about#everton" },
+      "publisher": { "@id": "https://plenorgroup.com/#org" },
+      "datePublished": "2026-06-01",
+      "dateModified": "2026-06-14",
+      "image": "https://plenorgroup.com/og-image.jpg",
+      "mainEntityOfPage": "https://plenorgroup.com/pt/metodo"
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://plenorgroup.com/pt/metodo#howto",
+      "name": "O Método Bridge",
+      "inLanguage": "pt-BR",
+      "description": "Método de quatro fases para transformar uma estratégia aprovada pelo board em uma engrenagem operacional rodando, com um operador responsável e uma transferência nomeada.",
+      "totalTime": "P180D",
+      "step": [
+        { "@type": "HowToStep", "position": 1, "name": "Diagnóstico", "text": "Semanas 1 a 2. Diagnóstico por entrevistas que produz um documento de uma página nomeando o estado atual, a árvore de métricas que o negócio de fato roda, e o mapa de donos de cada decisão recorrente da semana operacional." },
+        { "@type": "HowToStep", "position": 2, "name": "Desenho", "text": "Semanas 2 a 4. Produz a arquitetura operacional: cadência (ritmo semanal e mensal), scorecards (um por função com dono nomeado) e RACI para os próximos 90 dias." },
+        { "@type": "HowToStep", "position": 3, "name": "Montagem", "text": "Meses 2 a 4. Ciclos semanais de entrega. Operador da Plenor na cadeira para a cadência, responsável pelos artefatos que movem o negócio para a frente." },
+        { "@type": "HowToStep", "position": 4, "name": "Transferência", "text": "Mês 5 em diante. Comprime o conhecimento operacional em playbooks escritos. Transfere a propriedade para um operador interno nomeado. 30 dias de suporte pós-transferência." }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+<header class="site-header">
+  <div class="container">
+    <a href="/pt" class="brand" aria-label="Plenor Group home"><img src="/logo.png" alt="Plenor Group" width="200" height="50"></a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="/pt/metodo" aria-current="page">O Método</a>
+      <a href="/pt/formatos">Formatos</a>
+      <a href="/pt/cases">Cases</a>
+      <a href="/pt/insights">Insights</a>
+      <a href="/pt/sobre">Sobre</a>
+      <a href="/pt/contato" class="btn btn-primary">Agendar 15 min</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Abrir menu" aria-controls="nav-overlay" aria-expanded="false">Menu</button>
+  </div>
+</header>
+
+<div class="nav-overlay" id="nav-overlay" data-open="false" role="dialog" aria-modal="true" aria-label="Navegação do site" aria-hidden="true">
+  <div class="overlay-header">
+    <a href="/pt" class="brand" aria-label="Plenor Group home"><img src="/logo.png" alt="Plenor Group" width="200" height="50"></a>
+    <button class="nav-toggle" aria-label="Fechar menu" data-close="true">Fechar</button>
+  </div>
+  <nav class="nav-stack" aria-label="Mobile">
+    <a href="/pt/metodo" aria-current="page">O Método</a>
+    <a href="/pt/formatos">Formatos</a>
+    <a href="/pt/cases">Cases</a>
+    <a href="/pt/insights">Insights</a>
+    <a href="/pt/sobre">Sobre</a>
+    <a href="/pt/contato">Contato</a>
+    <a href="/method">English</a>
+  </nav>
+  <a href="/pt/contato" class="btn btn-primary nav-cta">Agendar 15 min</a>
+</div>
+
+<main id="main">
+
+<section class="hero">
+  <div class="container">
+    <h1>O Método Bridge.</h1>
+    <p class="subhead">Um engajamento operacional de quatro fases que leva uma estratégia aprovada pelo board do slide ao sistema rodando em 90 a 180 dias. Um operador responsável. Saída nomeada.</p>
+    <div class="cta-row">
+      <a href="/pt/contato" class="btn btn-primary">Agendar 15 min</a>
+      <a href="/pt/formatos" class="btn btn-secondary">Ver os formatos</a>
+    </div>
+    <p style="margin-block-start: 1.5rem; font-size: 0.95rem; color: var(--text-soft);"><a href="/method">Read in English &rarr;</a></p>
+  </div>
+</section>
+
+<section id="what">
+  <div class="container">
+    <div class="eyebrow">O que é</div>
+    <h2>O que é o Método Bridge.</h2>
+    <div class="unmeasured">
+      <p>O Método Bridge é um engajamento operacional de quatro fases que leva uma estratégia aprovada pelo board do slide ao sistema rodando em 90 a 180 dias. Um operador responsável está na linha para entregar a engrenagem operacional, de ponta a ponta. A entrega é uma engrenagem funcionando, com donos internos nomeados, playbooks escritos, e uma árvore de métricas que o time usa nas manhãs de segunda.</p>
+      <p style="margin-block-start: 1.25rem;">A maioria das estratégias falha no mesmo lugar. O plano existe, o orçamento existe, e o time existe, mas a cadência, os scorecards, o mapa de donos e as regras de decisão que tornam o plano executável nunca foram construídos. O Bridge atua nessa lacuna. As fases correm em sequência (Diagnóstico, Desenho, Montagem, Transferência) e comprimem ou estendem conforme o ponto de partida. O estado final é o mesmo em todo engajamento. O time interno é dono do trabalho, a conta operacional fecha, e a Plenor sai.</p>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="container">
+    <div class="eyebrow">Por que a lacuna existe</div>
+    <h2>Por que essa lacuna existe.</h2>
+    <div class="unmeasured">
+      <p>As grandes consultorias de estratégia não conseguem operacionalizar os próprios decks porque o modelo de engajamento aponta para o lado errado. Sócios vendem o trabalho de estratégia. Associados produzem os artefatos. O time se dissolve na apresentação. Ninguém nessa estrutura está posicionado para instalar uma cadência de segunda de manhã no seu time de operações seis semanas depois. O incentivo corre contra.</p>
+      <p style="margin-block-start: 1.25rem;">As buscas internas por um COO levam nove meses por um motivo diferente. A régua de contratação de um líder operacional sênior é alta, o pool de candidatos é raso no topo, e o primeiro trimestre no cargo é tempo de calibração, não de entrega. Fundadores que tentam preencher a lacuna sozinhos acabam fazendo o trabalho operacional em paralelo com o trabalho de fundador, que é justamente o gargalo que a contratação do COO deveria remover.</p>
+      <p style="margin-block-start: 1.25rem;">O Método Bridge existe porque o período entre a aprovação da estratégia e a maturidade do time é um cargo de verdade, com artefatos de verdade, que ninguém é estruturado para fazer. A gente faz esse cargo, e depois sai.</p>
+    </div>
+  </div>
+</section>
+
+<section id="diagnose">
+  <div class="container">
+    <div class="eyebrow">Fase 1</div>
+    <h2>Diagnóstico (semanas 1 a 2).</h2>
+    <div class="unmeasured">
+      <p>A fase de diagnóstico produz um único documento. Uma página, sem anexo, escrito para o fundador e o líder de operações. Nomeia o estado atual da operação, a árvore de métricas que o negócio de fato roda (que raramente é a árvore de métricas que o deck supôs), e o mapa de donos de cada decisão recorrente da semana operacional.</p>
+      <p style="margin-block-start: 1.25rem;">O trabalho é por entrevistas. Sentamos nas suas reuniões operacionais atuais, lemos os últimos 90 dias de materiais de board, puxamos os dados operacionais e conversamos com quem faz o trabalho. Não rodamos pesquisas nem workshops. Não produzimos um deck de estado atual. Produzimos um diagnóstico de uma página que nomeia o que funciona, o que está quebrado, e o que o fundador faz que precisa sair da agenda do fundador.</p>
+      <div class="pull-quote" style="margin-block-start: 2rem;">
+        Artefato na saída: diagnóstico operacional de uma página com lacunas nomeadas, donos nomeados, e uma sequência recomendada para os próximos 90 dias. Sucesso é: o fundador lê a página, concorda com 80% na primeira passada, e os 20% restantes são uma conversa, não um retrabalho.
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="design">
+  <div class="container">
+    <div class="eyebrow">Fase 2</div>
+    <h2>Desenho (semanas 2 a 4).</h2>
+    <div class="unmeasured">
+      <p>A fase de desenho produz a arquitetura operacional. Três artefatos: a cadência operacional (o ritmo semanal e mensal com reuniões nomeadas, participantes nomeados, e insumos e produtos nomeados), os scorecards (um por função, com a árvore de métricas da Fase 1 mapeada a um dono nomeado), e o RACI dos próximos 90 dias de trabalho.</p>
+      <p style="margin-block-start: 1.25rem;">O desenho acontece em paralelo com o início da Fase 3 na maioria dos engajamentos. Não pausamos a entrega para um sprint de planejamento. A primeira semana de Desenho é quando a cadência operacional roda pela primeira vez, muitas vezes desajeitada, e a segunda semana é quando revisamos a cadência com base no que de fato aconteceu na sala.</p>
+      <div class="pull-quote" style="margin-block-start: 2rem;">
+        Artefato na saída: plano de 30-60-90 dias com donos nomeados para cada frente, documentação escrita da cadência operacional, e scorecards em uso pelos líderes de operação. Sucesso é: os líderes de operação rodam a reunião de segunda a partir do scorecard sem a Plenor na sala até o fim da Semana 4.
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="standup">
+  <div class="container">
+    <div class="eyebrow">Fase 3</div>
+    <h2>Montagem (meses 2 a 4).</h2>
+    <div class="unmeasured">
+      <p>A fase de montagem é o trabalho de entrega. Ciclos semanais, cada um terminando em um status escrito nomeando o que saiu, o que escorregou, e o que está travado. O operador da Plenor está na cadeira para a cadência, na sala para as revisões operacionais, e na linha pelos artefatos que movem o negócio para a frente (vendor scorecards, modelos de capacidade, SOPs, a árvore de métricas conforme evolui).</p>
+      <p style="margin-block-start: 1.25rem;">Esta é a fase que não existe em um engajamento de consultoria. O trabalho é operacional, não consultivo. Não estamos recomendando um vendor scorecard, estamos escrevendo, negociando com compras, e acompanhando rodar por dois ciclos de faturamento antes de entregar. A maior parte do orçamento do engajamento é consumida aqui, e a maior parte da melhoria operacional acontece aqui.</p>
+      <div class="pull-quote" style="margin-block-start: 2rem;">
+        Artefato na saída: uma engrenagem operacional funcionando, documentada, com três ciclos completos de dados operacionais mostrando que o sistema se sustenta sem a Plenor rodando a cadência. Sucesso é: os líderes de operação rodam o negócio por quatro semanas enquanto o operador da Plenor observa e não intervém.
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="handoff">
+  <div class="container">
+    <div class="eyebrow">Fase 4</div>
+    <h2>Transferência (mês 5 em diante).</h2>
+    <div class="unmeasured">
+      <p>A fase de transferência comprime o conhecimento operacional em playbooks escritos e transfere a propriedade para um operador interno nomeado. O operador da Plenor sai da cadência, sai das revisões operacionais, e entra em um papel de suporte de 30 dias pós-transferência. Respondemos perguntas. Não tomamos decisões.</p>
+      <p style="margin-block-start: 1.25rem;">O documento de transferência é construído ao longo do engajamento, não no fim. Cada artefato da Fase 3 (regras de cadência, scorecards, SOPs, termos de fornecedor, caminhos de escalonamento) ganha uma seção de playbook no momento em que entra no ar. O mês de transferência é a consolidação dessas seções, a transferência explícita de propriedade, e a janela de 30 dias em que o dono interno roda o sistema com o operador da Plenor à disposição para perguntas.</p>
+      <div class="pull-quote" style="margin-block-start: 2rem;">
+        Artefato na saída: playbook documentado cobrindo cada sistema instalado durante o engajamento, dono interno nomeado de cada um, e 30 dias de suporte conforme necessário. Sucesso é: o dono interno roda a engrenagem operacional por 60 dias após a transferência sem a Plenor na sala, e as métricas se sustentam.
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="formats">
+  <div class="container">
+    <div class="eyebrow">Formatos de engajamento</div>
+    <h2>Mesma estrutura. Durações diferentes.</h2>
+    <div class="unmeasured">
+      <p>As quatro fases comprimem para engajamentos de diligência (duas a seis semanas, sem Fase 3 ou 4) e estendem para liderança operacional fracionada (seis a doze meses, com a Fase 3 rodando longa enquanto uma contratação efetiva é fechada). A estrutura do trabalho é a mesma. A duração e a profundidade da fase de montagem mudam com o formato do engajamento.</p>
+      <p style="margin-block-start: 1.5rem;"><a href="/pt/formatos">Ver os formatos de engajamento →</a></p>
+    </div>
+  </div>
+</section>
+
+<section id="will-not-do">
+  <div class="container">
+    <div class="eyebrow">Escopo</div>
+    <h2>O que não fazemos.</h2>
+    <div class="unmeasured">
+      <ul role="list" style="display: grid; gap: 1rem; max-width: 42rem;">
+        <li>Não escrevemos estratégia. O deck precisa existir antes de a gente entrar.</li>
+        <li>Não rodamos pirâmide de analistas. Um operador, nomeado, no engajamento.</li>
+        <li>Não entregamos um deck de readout final como artefato do engajamento. O artefato é um sistema rodando.</li>
+        <li>Não ficamos depois da transferência. A janela de suporte de 30 dias pós-transferência é o rastro mais longo.</li>
+        <li>Não entramos em retainers sem formato de saída. Todo engajamento tem um estado final nomeado.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="cta-banner" id="book">
+  <div class="container">
+    <div class="eyebrow">Pronto para conversar</div>
+    <h2>Quinze minutos bastam para saber se a Plenor encaixa no problema.</h2>
+    <div class="cta-row">
+      <a href="/pt/contato" class="btn btn-primary">Agendar 15 min</a>
+      <a href="/pt/formatos" class="btn btn-secondary">Ver os formatos</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="brand"><img src="/logo.png" alt="Plenor Group" width="200" height="50"></div>
+        <p class="footer-tagline">Consultoria de operações para times em crescimento. Tampa, Flórida. Disponível remoto e presencial.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <a href="mailto:contact@plenorgroup.com">contact@plenorgroup.com</a>
+      </div>
+      <div class="footer-col">
+        <h4>Ferramentas</h4>
+        <a href="https://everpaula.github.io/marketplace-ops-toolkit/" target="_blank" rel="noopener">Marketplace Ops Toolkit</a>
+        <a href="https://github.com/everpaula" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>&copy; 2026 Plenor Group LLC. Todos os direitos reservados.</div>
+      <div>Tampa, FL · EUA</div>
+    </div>
+  </div>
+</footer>
+
+<a href="/pt/contato" class="mobile-book-fab" aria-label="Agendar conversa de 15 minutos">Agendar 15 min</a>
+
+<script src="/nav.js" defer></script>
+
+</body>
+</html>
