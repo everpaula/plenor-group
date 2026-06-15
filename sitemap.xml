@@ -121,6 +121,36 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://plenorgroup.com/pt/insights/planejamento-de-capacidade</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://plenorgroup.com/pt/insights/vendor-scorecard</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://plenorgroup.com/pt/insights/cadencia-operacional</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://plenorgroup.com/pt/insights/diagnostico-operacional</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://plenorgroup.com/pt/insights/o-que-e-um-coo-fracionado</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://plenorgroup.com/insights/vendor-scorecard</loc>
     <lastmod>2026-06-13</lastmod>
     <changefreq>monthly</changefreq>

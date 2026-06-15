@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Planejamento de capacidade: como dimensionar a operação à demanda · Plenor Group</title>
+<meta name="description" content="O planejamento de capacidade casa equipe com demanda. Os insumos, a fórmula central, por que o shrinkage quebra a maioria dos planos, o dimensionamento de call center, e uma ferramenta grátis para modelar.">
+<link rel="canonical" href="https://plenorgroup.com/pt/insights/planejamento-de-capacidade">
+
+<link rel="alternate" hreflang="en" href="https://plenorgroup.com/insights/capacity-planning">
+<link rel="alternate" hreflang="pt-BR" href="https://plenorgroup.com/pt/insights/planejamento-de-capacidade">
+<link rel="alternate" hreflang="x-default" href="https://plenorgroup.com/insights/capacity-planning">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://plenorgroup.com/pt/insights/planejamento-de-capacidade">
+<meta property="og:title" content="Planejamento de capacidade: como dimensionar a operação à demanda">
+<meta property="og:description" content="Os insumos, a fórmula central, por que o shrinkage quebra a maioria dos planos, e o dimensionamento de call center.">
+<meta property="og:image" content="https://plenorgroup.com/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Planejamento de capacidade: como dimensionar a operação à demanda">
+<meta name="twitter:description" content="Os insumos, a fórmula central, e por que o shrinkage quebra a maioria dos planos.">
+<meta name="twitter:image" content="https://plenorgroup.com/og-image.jpg">
+
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://plenorgroup.com/pt/insights/planejamento-de-capacidade#post",
+      "headline": "Planejamento de capacidade: como dimensionar a operação à demanda",
+      "inLanguage": "pt-BR",
+      "description": "O planejamento de capacidade casa equipe com demanda. Os insumos, a fórmula central, por que o shrinkage quebra a maioria dos planos, o dimensionamento de call center, e uma ferramenta grátis para modelar.",
+      "author": { "@id": "https://plenorgroup.com/about#everton" },
+      "publisher": { "@id": "https://plenorgroup.com/#org" },
+      "datePublished": "2026-06-14",
+      "dateModified": "2026-06-15",
+      "image": "https://plenorgroup.com/og-image.jpg",
+      "mainEntityOfPage": "https://plenorgroup.com/pt/insights/planejamento-de-capacidade",
+      "isPartOf": { "@id": "https://plenorgroup.com/pt/insights#blog" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://plenorgroup.com/pt/insights/planejamento-de-capacidade#faq",
+      "inLanguage": "pt-BR",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "O que é planejamento de capacidade?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Planejamento de capacidade é o trabalho de casar a equipe com a demanda prevista para que uma operação atinja seu nível de serviço sem gastar com gente ociosa. Pega uma previsão de demanda, o tempo que cada unidade de trabalho leva, e o tempo produtivo por pessoa, e os transforma em quantas pessoas a operação precisa."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "O que é shrinkage no dimensionamento de equipe?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Shrinkage é a diferença entre as horas pelas quais uma pessoa é paga e as horas em que ela está de fato disponível para o trabalho principal. Cobre pausas, treinamento, reuniões, tarefas administrativas e ausências, e costuma ficar entre 25% e 35%. Um plano de capacidade que ignora o shrinkage vai subdimensionar a operação toda vez."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+<header class="site-header">
+  <div class="container">
+    <a href="/pt" class="brand" aria-label="Plenor Group home"><img src="/logo.png" alt="Plenor Group" width="200" height="50"></a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="/pt/metodo">O Método</a>
+      <a href="/pt/formatos">Formatos</a>
+      <a href="/pt/cases">Cases</a>
+      <a href="/pt/insights" aria-current="page">Insights</a>
+      <a href="/pt/sobre">Sobre</a>
+      <a href="/pt/contato" class="btn btn-primary">Agendar 15 min</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Abrir menu" aria-controls="nav-overlay" aria-expanded="false">Menu</button>
+  </div>
+</header>
+
+<div class="nav-overlay" id="nav-overlay" data-open="false" role="dialog" aria-modal="true" aria-label="Navegação do site" aria-hidden="true">
+  <div class="overlay-header">
+    <a href="/pt" class="brand" aria-label="Plenor Group home"><img src="/logo.png" alt="Plenor Group" width="200" height="50"></a>
+    <button class="nav-toggle" aria-label="Fechar menu" data-close="true">Fechar</button>
+  </div>
+  <nav class="nav-stack" aria-label="Mobile">
+    <a href="/pt/metodo">O Método</a>
+    <a href="/pt/formatos">Formatos</a>
+    <a href="/pt/cases">Cases</a>
+    <a href="/pt/insights" aria-current="page">Insights</a>
+    <a href="/pt/sobre">Sobre</a>
+    <a href="/pt/contato">Contato</a>
+    <a href="/insights/capacity-planning">English</a>
+  </nav>
+  <a href="/pt/contato" class="btn btn-primary nav-cta">Agendar 15 min</a>
+</div>
+
+<main id="main">
+
+<section class="hero">
+  <div class="container">
+    <p class="eyebrow">Notas operacionais</p>
+    <h1>Planejamento de capacidade: como dimensionar a operação à demanda.</h1>
+    <p class="subhead">Equipe enxuta demais e o nível de serviço desaba. Rica demais e você queima orçamento em horas ociosas. O planejamento de capacidade é como você acha a linha, e a sustenta conforme a demanda se move.</p>
+    <p class="lead">10 min de leitura &nbsp;·&nbsp; Por Everton Paula &nbsp;·&nbsp; <a href="/insights/capacity-planning">Read in English &rarr;</a></p>
+  </div>
+</section>
+
+<section id="body">
+  <div class="container">
+    <div class="unmeasured" style="max-width: 42rem;">
+      <p>A maioria das decisões de dimensionamento em uma empresa em crescimento é tomada no feeling. A fila está feia, então um gestor pede mais três pessoas. O orçamento está apertado, então o financeiro congela uma reposição. Nenhuma das decisões está errada de propósito, e as duas são chute, porque ninguém conectou o número de pessoas à quantidade de trabalho de um jeito que você consiga defender.</p>
+
+      <p style="margin-block-start: 1.25rem;">O planejamento de capacidade é essa conexão. Pega quanto trabalho está chegando, quanto tempo cada peça leva, e quanto do tempo pago de uma pessoa está de fato disponível, e os transforma em um número de pessoas. Bem feito, encerra a discussão mensal sobre headcount, porque o nível de equipe deixa de ser opinião e vira um cálculo que todo mundo enxerga.</p>
+
+      <h2 style="margin-block: 2.75rem 1.25rem;">O que é planejamento de capacidade</h2>
+
+      <p>Planejamento de capacidade é casar a equipe com a demanda prevista para que a operação atinja seu nível de serviço sem pagar por gente ociosa. Vale em qualquer lugar onde o trabalho chega e pessoas o processam: uma fila de atendimento, um centro de distribuição, um time de sinistros, uma mesa de moderação, um piso de despacho de entregadores. O vocabulário muda por função, a matemática não.</p>
+
+      <p style="margin-block-start: 1.25rem;">Um plano de capacidade precisa de quatro insumos, e a qualidade do plano é limitada pelo mais fraco deles.</p>
+
+      <ul role="list" style="display: grid; gap: 0.85rem; max-width: 42rem; margin-block-start: 1.25rem;">
+        <li><strong>Previsão de demanda.</strong> Quanto trabalho está chegando, por período. Contatos por semana, pedidos por dia, sinistros por turno. É o insumo que a maioria dos times erra, em geral planejando para a média em vez do pico.</li>
+        <li><strong>Tempo de atendimento.</strong> Quanto leva uma unidade de trabalho, em média. A média esconde muita coisa, mas é o ponto de partida.</li>
+        <li><strong>Tempo disponível por pessoa.</strong> As horas que uma pessoa consegue de fato gastar no trabalho principal, depois de tudo o mais que o dia pago contém.</li>
+        <li><strong>Nível de serviço alvo.</strong> O padrão que você está dimensionando para sustentar. Atender 80% dos contatos em 30 segundos, despachar 99% dos pedidos no mesmo dia. Sem um alvo, não há resposta certa para quantas pessoas você precisa.</li>
+      </ul>
+
+      <h2 style="margin-block: 2.75rem 1.25rem;">O cálculo central</h2>
+
+      <p>A base de todo modelo de capacidade é a mesma. Trabalho total é igual a demanda vezes tempo de atendimento. Pessoas necessárias é igual a trabalho total dividido pelo tempo disponível por pessoa. Tudo o mais é refinamento por cima dessas duas linhas.</p>
+
+      <p style="margin-block-start: 1.25rem;">Um exemplo prático. Um time de atendimento recebe 10.000 contatos por semana, e o tempo médio de atendimento é de 8 minutos. São 80.000 minutos de trabalho, ou cerca de 1.333 horas por semana. Se um agente é pago por 40 horas semanais, é tentador dividir 1.333 por 40 e concluir que você precisa de 33 agentes. Esse número está errado, e a operação que se dimensiona por ele vai furar o nível de serviço toda semana. O motivo é o shrinkage.</p>
+
+      <h2 style="margin-block: 2.75rem 1.25rem;">Shrinkage: o insumo que quebra a maioria dos planos</h2>
+
+      <p>Shrinkage é a diferença entre as horas pelas quais a pessoa é paga e as horas em que ela está disponível para o trabalho principal. Pausas, reuniões de time, treinamento, 1-a-1s, queda de sistema, tarefas administrativas e ausências vivem todas nessa diferença. Na maioria das operações o shrinkage fica entre 25% e 35%, e é o motivo único mais comum de um plano de capacidade subdimensionar.</p>
+
+      <p style="margin-block-start: 1.25rem;">De volta ao exemplo. Se o shrinkage é de 30%, um agente pago por 40 horas está disponível por 28. Agora a conta é 1.333 horas de trabalho divididas por 28 horas produtivas, que dá cerca de 48 agentes, não 33. A diferença de 15 agentes entre o número ingênuo e o real é a diferença entre sustentar o nível de serviço e se afogar nele. Um plano que ignora o shrinkage não é um plano conservador, é um plano errado.</p>
+
+      <figure class="diagram" role="img" aria-label="Um cálculo de capacidade. De uma semana paga de 40 horas, 28 horas são produtivas e 12 horas, ou 30%, são shrinkage. 10.000 contatos a 8 minutos cada são 1.333 horas de trabalho, divididas por 28 horas produtivas por agente, igual a 48 agentes necessários.">
+        <div class="shrink-bar">
+          <div class="shrink-prod" style="flex: 70;">Produtivo 28h</div>
+          <div class="shrink-loss" style="flex: 30;">Shrinkage 12h</div>
+        </div>
+        <div class="calc-flow">
+          <div class="calc-box"><b>10.000</b><span>contatos/sem</span></div>
+          <div class="calc-op">&times;</div>
+          <div class="calc-box"><b>8 min</b><span>atendimento</span></div>
+          <div class="calc-op">=</div>
+          <div class="calc-box"><b>1.333h</b><span>trabalho/sem</span></div>
+          <div class="calc-op">&divide;</div>
+          <div class="calc-box"><b>28h</b><span>produtivas/agente</span></div>
+          <div class="calc-op">=</div>
+          <div class="calc-box calc-result"><b>48</b><span>agentes</span></div>
+        </div>
+        <figcaption>Horas pagas não são horas produtivas. Subtrair 30% de shrinkage transforma a resposta ingênua de 33 agentes nos 48 reais.</figcaption>
+      </figure>
+
+      <h2 style="margin-block: 2.75rem 1.25rem;">Dimensionar call center tem mais um detalhe</h2>
+
+      <p>Para trabalho que entra em fila em tempo real, como ligações e chats ao vivo, você não pode simplesmente dividir trabalho por horas disponíveis, porque os contatos não chegam em um fluxo arrumado. Eles se agrupam, e enquanto agentes atendem um contato, outros esperam. Para sustentar um tempo de atendimento alvo, uma operação de interação precisa dimensionar acima do número bruto de carga, deixando folga deliberada para a fila não acumular durante os agrupamentos.</p>
+
+      <p style="margin-block-start: 1.25rem;">É isso que um modelo de Erlang captura, e é por isso que existem ferramentas de dimensionamento de call center. A lição prática sem a matemática: quanto mais alto o seu nível de serviço alvo, mais folga você precisa dimensionar, e a relação não é linear. Sair de atender 70% das ligações em 30 segundos para 90% custa muito mais do que a diferença de 20 pontos sugere. Essa curva é uma conversa de orçamento que vale ter antes de prometer um nível de serviço.</p>
+
+      <h2 style="margin-block: 2.75rem 1.25rem;">Do cálculo ao modelo de dimensionamento</h2>
+
+      <p>Um único número não é um modelo de dimensionamento. Um modelo de dimensionamento é o cálculo rodado entre períodos, para que você enxergue onde a demanda tem pico, onde o plano está curto, e onde você está carregando folga. É o que transforma planejamento de capacidade em planejamento de headcount: a contratação que você aprova neste trimestre deveria sair da diferença que o modelo mostra entre demanda e capacidade atual ao longo dos próximos dois ou três trimestres, não de como a fila pareceu na semana passada.</p>
+
+      <p style="margin-block-start: 1.25rem;">Você consegue montar uma primeira versão em uma planilha, e deveria, porque montá-la te ensina quais insumos a sua operação não tem. Se quiser uma partida adiantada, a ferramenta grátis de <a href="https://everpaula.github.io/marketplace-ops-toolkit/workforce-forecast.html" target="_blank" rel="noopener">previsão de equipe</a> no Marketplace Ops Toolkit modela demanda, tempo de atendimento e shrinkage em um número de headcount no seu navegador, sem cadastro.</p>
+
+      <figure class="figure-shot">
+        <a class="shot-link" href="https://everpaula.github.io/marketplace-ops-toolkit/workforce-forecast.html" target="_blank" rel="noopener" aria-label="Abrir a ferramenta de previsão de equipe">
+          <img src="/img/workforce-forecast-tool.jpg" width="1000" height="1276" loading="lazy" alt="A ferramenta de previsão de equipe no Marketplace Ops Toolkit: tipos de caso com volume diário e tempo médio de atendimento, parâmetros operacionais incluindo horas produtivas por agente e shrinkage, e um resultado de headcount necessário.">
+          <span class="shot-launch" aria-hidden="true">&#9654; Testar ao vivo</span>
+        </a>
+        <figcaption>A ferramenta grátis de previsão de equipe: informe volume, tempo de atendimento e shrinkage, e ela retorna o headcount necessário. <a href="https://everpaula.github.io/marketplace-ops-toolkit/workforce-forecast.html" target="_blank" rel="noopener">Abrir a ferramenta &rarr;</a></figcaption>
+      </figure>
+
+      <h2 style="margin-block: 2.75rem 1.25rem;">As três formas de dar errado</h2>
+
+      <p><strong>Planejar para a média.</strong> A demanda não é plana. Se você se dimensiona para a média semanal, fica superdimensionado nos vales e submerso nos picos, e os clientes só vivem os picos. Planeje para o formato da demanda, não para a média dela.</p>
+
+      <p style="margin-block-start: 1.25rem;"><strong>Esquecer o shrinkage.</strong> Coberto acima, e vale repetir porque é comum. Horas pagas não são horas produtivas. Subtraia a diferença antes de dividir.</p>
+
+      <p style="margin-block-start: 1.25rem;"><strong>Tratar como exercício único.</strong> Um plano de capacidade não é um documento, é um modelo que você roda de novo conforme demanda e tempo de atendimento se movem. O plano que você montou em janeiro está errado em março se ninguém atualizou a previsão. Ele pertence à cadência operacional, revisado mensalmente, não arquivado depois que o orçamento é fechado.</p>
+
+      <h2 style="margin-block: 2.75rem 1.25rem;">Por que isso é trabalho de operação</h2>
+
+      <p>O planejamento de capacidade é onde boa parte da dor operacional é decidida em silêncio. Um time que está sempre atrasado muitas vezes não é um time com problema de performance, é um time que foi dimensionado para o número errado e está sendo cobrado a cobrir a diferença com esforço. Montar o modelo que acerta o número, e revisá-lo na <a href="/pt/insights/cadencia-operacional">cadência operacional</a> conforme a demanda se move, é um dos sistemas que deixam uma empresa crescer sem a operação quebrar embaixo.</p>
+
+      <p style="margin-block-start: 1.25rem;">É esse o trabalho que a Plenor faz. Se a sua operação é dimensionada no feeling e você quer um operador externo para lê-la e ranquear o que corrigir primeiro, o <a href="/pt/teardown">Operating Teardown</a> de uma semana e preço fixo é por onde começar. Se você precisa de alguém para conduzir a operação enquanto a constrói, isso é trabalho de <a href="/pt/coo-fracionado">COO fracionado</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section id="next">
+  <div class="container">
+    <div class="eyebrow">Continue lendo</div>
+    <h2>Próxima nota.</h2>
+    <div class="card-grid">
+      <a class="card" href="/pt/insights/cadencia-operacional">
+        <h3>Como instalar uma cadência operacional semanal em 30 dias</h3>
+        <p>Onde o modelo de capacidade é revisado e reprojetado conforme a demanda se move. A semana de três reuniões e a instalação de 30 dias.</p>
+      </a>
+      <a class="card" href="/pt/insights/analise-de-causa-raiz">
+        <h3>Como fazer uma análise de causa raiz</h3>
+        <p>Quando um time está sempre atrasado, a capacidade costuma ser a causa raiz. Os métodos dos 5 Porquês e da espinha de peixe, com um exemplo prático.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-banner" id="book">
+  <div class="container">
+    <div class="eyebrow">Da leitura à operação</div>
+    <h2>Dimensionado no feeling em vez do modelo?</h2>
+    <p>Uma semana, preço fixo, um teardown escrito que lê a sua operação e ranqueia o que corrigir primeiro, capacidade incluída.</p>
+    <div class="cta-row">
+      <a href="/pt/teardown" class="btn btn-primary">Conheça o Operating Teardown</a>
+      <a href="/pt/coo-fracionado" class="btn btn-secondary">Serviços de COO fracionado</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="brand"><img src="/logo.png" alt="Plenor Group" width="200" height="50"></div>
+        <p class="footer-tagline">Consultoria de operações para times em crescimento. Tampa, Flórida. Disponível remoto e presencial.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <a href="mailto:contact@plenorgroup.com">contact@plenorgroup.com</a>
+      </div>
+      <div class="footer-col">
+        <h4>Ferramentas</h4>
+        <a href="https://everpaula.github.io/marketplace-ops-toolkit/" target="_blank" rel="noopener">Marketplace Ops Toolkit</a>
+        <a href="https://github.com/everpaula" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>&copy; 2026 Plenor Group LLC. Todos os direitos reservados.</div>
+      <div>Tampa, FL · EUA</div>
+    </div>
+  </div>
+</footer>
+
+<a href="/pt/contato" class="mobile-book-fab" aria-label="Agendar conversa de 15 minutos">Agendar 15 min</a>
+
+<script src="/nav.js" defer></script>
+
+</body>
+</html>
