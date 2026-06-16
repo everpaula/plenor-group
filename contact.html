@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact Plenor Group · Book a 15-min intro</title>
+<title>Contact Plenor Group · Get in touch</title>
 <meta name="description" content="15-minute intro call to talk through your operating problem. Tampa, FL. English or Portuguese. Two business day reply.">
 <link rel="canonical" href="https://plenorgroup.com/contact">
 
@@ -13,13 +13,13 @@
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://plenorgroup.com/contact">
-<meta property="og:title" content="Contact Plenor Group · Book a 15-min intro">
+<meta property="og:title" content="Contact Plenor Group · Get in touch">
 <meta property="og:description" content="15-minute intro call to talk through your operating problem. Tampa, FL. English or Portuguese.">
 <meta property="og:image" content="https://plenorgroup.com/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Contact Plenor Group · Book a 15-min intro">
+<meta name="twitter:title" content="Contact Plenor Group · Get in touch">
 <meta name="twitter:description" content="15-minute intro call. Tampa, FL. English or Portuguese.">
 <meta name="twitter:image" content="https://plenorgroup.com/og-image.jpg">
 
@@ -84,7 +84,7 @@
       <a href="/work">Work</a>
       <a href="/insights">Insights</a>
       <a href="/about">About</a>
-      <a href="/contact" class="btn btn-primary" aria-current="page">Book a 15-min intro</a>
+      <a href="/contact" class="btn btn-primary" aria-current="page">Get in touch</a>
     </nav>
     <button class="nav-toggle" aria-label="Open menu" aria-controls="nav-overlay" aria-expanded="false">Menu</button>
   </div>
@@ -103,7 +103,7 @@
     <a href="/about">About</a>
     <a href="/contact" aria-current="page">Contact</a>
   </nav>
-  <a href="/contact" class="btn btn-primary nav-cta">Book a 15-min intro</a>
+  <a href="/contact" class="btn btn-primary nav-cta">Get in touch</a>
 </div>
 
 <main id="main">
@@ -111,26 +111,16 @@
 <section class="hero">
   <div class="container">
     <h1>Tell us the shape of the problem.</h1>
-    <p class="subhead">Fifteen minutes is enough to know if Plenor fits the problem. Pick a slot below, or write to contact@plenorgroup.com.</p>
-  </div>
-</section>
-
-<section id="book">
-  <div class="container">
-    <div class="eyebrow">Book a 15-minute intro</div>
-    <h2>Pick a slot below.</h2>
-    <p class="lead">We respond within two business days for any custom timing requests.</p>
-    <div id="cal-embed" aria-label="Cal.com booking calendar">
-      <button type="button" id="load-cal" class="btn btn-primary">Load calendar</button>
-      <p class="cal-fallback-note">Or visit <a href="https://cal.com/plenor-group/15min" target="_blank" rel="noopener">cal.com/plenor-group/15min</a> directly.</p>
+    <p class="subhead">Fifteen minutes is enough to know if Plenor fits the problem. Write to contact@plenorgroup.com with the shape of the problem, and we reply within two business days.</p>
+    <div class="cta-row">
+      <a href="mailto:contact@plenorgroup.com?subject=Plenor%20Group%20inquiry" class="btn btn-primary">Email us</a>
     </div>
-    <p style="margin-block-start: 1.25rem; color: var(--text-soft); font-size: 0.95rem;">If the calendar does not load, write to <a href="mailto:contact@plenorgroup.com">contact@plenorgroup.com</a> or book directly at <a href="https://cal.com/plenor-group/15min" target="_blank" rel="noopener">cal.com/plenor-group/15min</a>.</p>
   </div>
 </section>
 
 <section id="brief">
   <div class="container">
-    <div class="eyebrow">First email or booking note</div>
+    <div class="eyebrow">Your first email</div>
     <h2>What to include.</h2>
     <div class="unmeasured">
       <p>Four lines, no more. The shorter the brief, the faster the first conversation gets to the operating question.</p>
@@ -208,22 +198,6 @@
 </footer>
 
 <script src="/nav.js" defer></script>
-
-<script type="text/javascript">
-  document.getElementById('load-cal').addEventListener('click', function () {
-    this.remove();
-    var note = document.querySelector('.cal-fallback-note');
-    if (note) note.remove();
-    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-    Cal("init", "15min", {origin:"https://cal.com"});
-    Cal.ns["15min"]("inline", {
-      elementOrSelector:"#cal-embed",
-      config: {"layout":"month_view"},
-      calLink: "plenor-group/15min",
-    });
-    Cal.ns["15min"]("ui", {"theme":"light","cssVarsPerTheme":{"light":{"cal-brand":"#1e3a8a"}},"hideEventTypeDetails":false,"layout":"month_view"});
-  });
-</script>
 
 </body>
 </html>

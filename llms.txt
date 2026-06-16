@@ -50,12 +50,11 @@ Everton Paula, 15+ years operating inside marketplaces, fintech, last-mile platf
 - How to install a weekly operating cadence: https://plenorgroup.com/insights/operating-cadence
 - The one-page operating diagnostic: https://plenorgroup.com/insights/operating-diagnostic
 - About (founder): https://plenorgroup.com/about
-- Contact (book 15-min intro): https://plenorgroup.com/contact
+- Contact (email): https://plenorgroup.com/contact
 
 ## Contact
 
-- Email: contact@plenorgroup.com
-- Booking: https://cal.com/plenor-group/15min
+- Email: contact@plenorgroup.com (preferred contact method)
 - GitHub (open-source tools): https://github.com/everpaula
 - Marketplace Ops Toolkit: https://everpaula.github.io/marketplace-ops-toolkit/
 
