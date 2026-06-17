@@ -1329,3 +1329,44 @@ article#case-2 {
   .bridge-viz, .bridge-end, .bridge-phase { border: 1px solid CanvasText; }
   .bridge-bottom { background: CanvasText; }
 }
+
+/* Operations maturity ladder */
+.maturity-ladder { display: flex; align-items: flex-end; gap: 0.5rem; }
+.ladder-step {
+  flex: 1;
+  min-width: 0;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--accent);
+  border-radius: 6px 6px 0 0;
+  padding: 0.8rem 0.7rem;
+  text-align: center;
+}
+.ladder-step .lvl {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-soft);
+  font-weight: 700;
+}
+.ladder-step b {
+  display: block;
+  font-family: var(--serif);
+  font-size: 1rem;
+  color: var(--text);
+  margin-block: 0.15rem 0.25rem;
+  line-height: 1.1;
+}
+.ladder-step .desc { display: block; font-size: 0.78rem; color: var(--text-soft); line-height: 1.3; }
+.ladder-step:nth-child(1) { min-height: 8rem; }
+.ladder-step:nth-child(2) { min-height: 9.5rem; }
+.ladder-step:nth-child(3) { min-height: 11rem; }
+.ladder-step:nth-child(4) { min-height: 12.5rem; }
+.ladder-step:nth-child(5) { min-height: 14rem; border-top-color: var(--signal); }
+@media (max-width: 640px) {
+  .maturity-ladder { flex-direction: column; align-items: stretch; }
+  .ladder-step { min-height: auto !important; }
+}
+@media (forced-colors: active) { .ladder-step { border: 1px solid CanvasText; } }

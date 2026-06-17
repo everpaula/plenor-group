@@ -109,8 +109,20 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://plenorgroup.com/insights/operations-maturity-model</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://plenorgroup.com/insights/root-cause-analysis</loc>
     <lastmod>2026-06-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://plenorgroup.com/pt/insights/modelo-de-maturidade-operacional</loc>
+    <lastmod>2026-06-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
